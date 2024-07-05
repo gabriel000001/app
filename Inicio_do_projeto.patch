@@ -1,0 +1,3267 @@
+Subject: [PATCH] Inicio do projeto
+---
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/.gitignore	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,43 @@
++# Miscellaneous
++*.class
++*.log
++*.pyc
++*.swp
++.DS_Store
++.atom/
++.buildlog/
++.history
++.svn/
++migrate_working_dir/
++
++# IntelliJ related
++*.iml
++*.ipr
++*.iws
++.idea/
++
++# The .vscode folder contains launch configuration and tasks you configure in
++# VS Code which you may wish to be included in version control, so this line
++# is commented out by default.
++#.vscode/
++
++# Flutter/Dart/Pub related
++**/doc/api/
++**/ios/Flutter/.last_build_id
++.dart_tool/
++.flutter-plugins
++.flutter-plugins-dependencies
++.pub-cache/
++.pub/
++/build/
++
++# Symbolication related
++app.*.symbols
++
++# Obfuscation related
++app.*.map.json
++
++# Android Studio will place build artifacts here
++/android/app/debug
++/android/app/profile
++/android/app/release
+Index: .metadata
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.metadata b/.metadata
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/.metadata	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,33 @@
++# This file tracks properties of this Flutter project.
++# Used by Flutter tool to assess capabilities and perform upgrades etc.
++#
++# This file should be version controlled and should not be manually edited.
++
++version:
++  revision: "300451adae589accbece3490f4396f10bdf15e6e"
++  channel: "stable"
++
++project_type: app
++
++# Tracks metadata for the flutter migrate command
++migration:
++  platforms:
++    - platform: root
++      create_revision: 300451adae589accbece3490f4396f10bdf15e6e
++      base_revision: 300451adae589accbece3490f4396f10bdf15e6e
++    - platform: android
++      create_revision: 300451adae589accbece3490f4396f10bdf15e6e
++      base_revision: 300451adae589accbece3490f4396f10bdf15e6e
++    - platform: ios
++      create_revision: 300451adae589accbece3490f4396f10bdf15e6e
++      base_revision: 300451adae589accbece3490f4396f10bdf15e6e
++
++  # User provided section
++
++  # List of Local paths (relative to this file) that should be
++  # ignored by the migrate tool.
++  #
++  # Files that are not part of the templates will be ignored by default.
++  unmanaged_files:
++    - 'lib/main.dart'
++    - 'ios/Runner.xcodeproj/project.pbxproj'
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/README.md	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,16 @@
++# untitled
++
++A new Flutter project.
++
++## Getting Started
++
++This project is a starting point for a Flutter application.
++
++A few resources to get you started if this is your first Flutter project:
++
++- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
++- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
++
++For help getting started with Flutter development, view the
++[online documentation](https://docs.flutter.dev/), which offers tutorials,
++samples, guidance on mobile development, and a full API reference.
+Index: analysis_options.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/analysis_options.yaml b/analysis_options.yaml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/analysis_options.yaml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,28 @@
++# This file configures the analyzer, which statically analyzes Dart code to
++# check for errors, warnings, and lints.
++#
++# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
++# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
++# invoked from the command line by running `flutter analyze`.
++
++# The following line activates a set of recommended lints for Flutter apps,
++# packages, and plugins designed to encourage good coding practices.
++include: package:flutter_lints/flutter.yaml
++
++linter:
++  # The lint rules applied to this project can be customized in the
++  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
++  # included above or to enable additional rules. A list of all available lints
++  # and their documentation is published at https://dart.dev/lints.
++  #
++  # Instead of disabling a lint rule for the entire project in the
++  # section below, it can also be suppressed for a single line of code
++  # or a specific dart file by using the `// ignore: name_of_lint` and
++  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
++  # producing the lint.
++  rules:
++    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
++    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
++
++# Additional information about this file can be found at
++# https://dart.dev/guides/language/analysis-options
+Index: android/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/.gitignore b/android/.gitignore
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/.gitignore	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,13 @@
++gradle-wrapper.jar
++/.gradle
++/captures/
++/gradlew
++/gradlew.bat
++/local.properties
++GeneratedPluginRegistrant.java
++
++# Remember to never publicly share your keystore.
++# See https://flutter.dev/docs/deployment/android#reference-the-keystore-from-the-app
++key.properties
++**/*.keystore
++**/*.jks
+Index: android/app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/build.gradle b/android/app/build.gradle
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/build.gradle	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,57 @@
++plugins {
++    id "com.android.application"
++    id "kotlin-android"
++    id "dev.flutter.flutter-gradle-plugin"
++}
++
++def localProperties = new Properties()
++def localPropertiesFile = rootProject.file('local.properties')
++if (localPropertiesFile.exists()) {
++    localPropertiesFile.withReader('UTF-8') { reader ->
++        localProperties.load(reader)
++    }
++}
++
++def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
++if (flutterVersionCode == null) {
++    flutterVersionCode = '1'
++}
++
++def flutterVersionName = localProperties.getProperty('flutter.versionName')
++if (flutterVersionName == null) {
++    flutterVersionName = '1.0'
++}
++
++android {
++    namespace "com.example.untitled"
++    compileSdk flutter.compileSdkVersion
++    ndkVersion flutter.ndkVersion
++
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8
++        targetCompatibility JavaVersion.VERSION_1_8
++    }
++
++    defaultConfig {
++        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
++        applicationId "com.example.untitled"
++        // You can update the following values to match your application needs.
++        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
++        minSdkVersion flutter.minSdkVersion
++        targetSdkVersion flutter.targetSdkVersion
++        versionCode flutterVersionCode.toInteger()
++        versionName flutterVersionName
++    }
++
++    buildTypes {
++        release {
++            // TODO: Add your own signing config for the release build.
++            // Signing with the debug keys for now, so `flutter run --release` works.
++            signingConfig signingConfigs.debug
++        }
++    }
++}
++
++flutter {
++    source '../..'
++}
+Index: android/app/src/debug/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/debug/AndroidManifest.xml b/android/app/src/debug/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/debug/AndroidManifest.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,7 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
++    <!-- The INTERNET permission is required for development. Specifically,
++         the Flutter tool needs it to communicate with the running application
++         to allow setting breakpoints, to provide hot reload, etc.
++    -->
++    <uses-permission android:name="android.permission.INTERNET"/>
++</manifest>
+Index: android/app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/AndroidManifest.xml b/android/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/AndroidManifest.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,44 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
++    <application
++        android:label="untitled"
++        android:name="${applicationName}"
++        android:icon="@mipmap/ic_launcher">
++        <activity
++            android:name=".MainActivity"
++            android:exported="true"
++            android:launchMode="singleTop"
++            android:theme="@style/LaunchTheme"
++            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
++            android:hardwareAccelerated="true"
++            android:windowSoftInputMode="adjustResize">
++            <!-- Specifies an Android theme to apply to this Activity as soon as
++                 the Android process has started. This theme is visible to the user
++                 while the Flutter UI initializes. After that, this theme continues
++                 to determine the Window background behind the Flutter UI. -->
++            <meta-data
++              android:name="io.flutter.embedding.android.NormalTheme"
++              android:resource="@style/NormalTheme"
++              />
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN"/>
++                <category android:name="android.intent.category.LAUNCHER"/>
++            </intent-filter>
++        </activity>
++        <!-- Don't delete the meta-data below.
++             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
++        <meta-data
++            android:name="flutterEmbedding"
++            android:value="2" />
++    </application>
++    <!-- Required to query activities that can process text, see:
++         https://developer.android.com/training/package-visibility?hl=en and
++         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
++
++         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
++    <queries>
++        <intent>
++            <action android:name="android.intent.action.PROCESS_TEXT"/>
++            <data android:mimeType="text/plain"/>
++        </intent>
++    </queries>
++</manifest>
+Index: android/app/src/main/java/com/example/untitled/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/java/com/example/untitled/MainActivity.java b/android/app/src/main/java/com/example/untitled/MainActivity.java
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/java/com/example/untitled/MainActivity.java	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,6 @@
++package com.example.untitled;
++
++import io.flutter.embedding.android.FlutterActivity;
++
++public class MainActivity extends FlutterActivity {
++}
+Index: android/app/src/main/res/drawable-v21/launch_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/res/drawable-v21/launch_background.xml b/android/app/src/main/res/drawable-v21/launch_background.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/res/drawable-v21/launch_background.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Modify this file to customize your launch splash screen -->
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item android:drawable="?android:colorBackground" />
++
++    <!-- You can insert your own image assets here -->
++    <!-- <item>
++        <bitmap
++            android:gravity="center"
++            android:src="@mipmap/launch_image" />
++    </item> -->
++</layer-list>
+Index: android/app/src/main/res/drawable/launch_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/res/drawable/launch_background.xml b/android/app/src/main/res/drawable/launch_background.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/res/drawable/launch_background.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!-- Modify this file to customize your launch splash screen -->
++<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
++    <item android:drawable="@android:color/white" />
++
++    <!-- You can insert your own image assets here -->
++    <!-- <item>
++        <bitmap
++            android:gravity="center"
++            android:src="@mipmap/launch_image" />
++    </item> -->
++</layer-list>
+Index: android/app/src/main/res/values-night/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/res/values-night/styles.xml b/android/app/src/main/res/values-night/styles.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/res/values-night/styles.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is on -->
++    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
++        <!-- Show a splash screen on the activity. Automatically removed when
++             the Flutter engine draws its first frame -->
++        <item name="android:windowBackground">@drawable/launch_background</item>
++    </style>
++    <!-- Theme applied to the Android Window as soon as the process has started.
++         This theme determines the color of the Android Window while your
++         Flutter UI initializes, as well as behind your Flutter UI while its
++         running.
++
++         This Theme is only used starting with V2 of Flutter's Android embedding. -->
++    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
++        <item name="android:windowBackground">?android:colorBackground</item>
++    </style>
++</resources>
+Index: android/app/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/main/res/values/styles.xml b/android/app/src/main/res/values/styles.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/main/res/values/styles.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
++    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
++        <!-- Show a splash screen on the activity. Automatically removed when
++             the Flutter engine draws its first frame -->
++        <item name="android:windowBackground">@drawable/launch_background</item>
++    </style>
++    <!-- Theme applied to the Android Window as soon as the process has started.
++         This theme determines the color of the Android Window while your
++         Flutter UI initializes, as well as behind your Flutter UI while its
++         running.
++
++         This Theme is only used starting with V2 of Flutter's Android embedding. -->
++    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
++        <item name="android:windowBackground">?android:colorBackground</item>
++    </style>
++</resources>
+Index: android/app/src/profile/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/app/src/profile/AndroidManifest.xml b/android/app/src/profile/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/app/src/profile/AndroidManifest.xml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,7 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
++    <!-- The INTERNET permission is required for development. Specifically,
++         the Flutter tool needs it to communicate with the running application
++         to allow setting breakpoints, to provide hot reload, etc.
++    -->
++    <uses-permission android:name="android.permission.INTERNET"/>
++</manifest>
+Index: android/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/build.gradle b/android/build.gradle
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/build.gradle	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,18 @@
++allprojects {
++    repositories {
++        google()
++        mavenCentral()
++    }
++}
++
++rootProject.buildDir = '../build'
++subprojects {
++    project.buildDir = "${rootProject.buildDir}/${project.name}"
++}
++subprojects {
++    project.evaluationDependsOn(':app')
++}
++
++tasks.register("clean", Delete) {
++    delete rootProject.buildDir
++}
+Index: android/gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/android/gradle.properties b/android/gradle.properties
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/gradle.properties	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,3 @@
++org.gradle.jvmargs=-Xmx4G
++android.useAndroidX=true
++android.enableJetifier=true
+Index: android/gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/android/gradle/wrapper/gradle-wrapper.properties b/android/gradle/wrapper/gradle-wrapper.properties
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/gradle/wrapper/gradle-wrapper.properties	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,5 @@
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.3-all.zip
+Index: android/settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/android/settings.gradle b/android/settings.gradle
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/android/settings.gradle	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,26 @@
++pluginManagement {
++    def flutterSdkPath = {
++        def properties = new Properties()
++        file("local.properties").withInputStream { properties.load(it) }
++        def flutterSdkPath = properties.getProperty("flutter.sdk")
++        assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
++        return flutterSdkPath
++    }
++    settings.ext.flutterSdkPath = flutterSdkPath()
++
++    includeBuild("${settings.ext.flutterSdkPath}/packages/flutter_tools/gradle")
++
++    repositories {
++        google()
++        mavenCentral()
++        gradlePluginPortal()
++    }
++}
++
++plugins {
++    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
++    id "com.android.application" version "7.3.0" apply false
++    id "org.jetbrains.kotlin.android" version "1.7.10" apply false
++}
++
++include ":app"
+Index: ios/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/.gitignore b/ios/.gitignore
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/.gitignore	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,34 @@
++**/dgph
++*.mode1v3
++*.mode2v3
++*.moved-aside
++*.pbxuser
++*.perspectivev3
++**/*sync/
++.sconsign.dblite
++.tags*
++**/.vagrant/
++**/DerivedData/
++Icon?
++**/Pods/
++**/.symlinks/
++profile
++xcuserdata
++**/.generated/
++Flutter/App.framework
++Flutter/Flutter.framework
++Flutter/Flutter.podspec
++Flutter/Generated.xcconfig
++Flutter/ephemeral/
++Flutter/app.flx
++Flutter/app.zip
++Flutter/flutter_assets/
++Flutter/flutter_export_environment.sh
++ServiceDefinitions.json
++Runner/GeneratedPluginRegistrant.*
++
++# Exceptions to above rules.
++!default.mode1v3
++!default.mode2v3
++!default.pbxuser
++!default.perspectivev3
+Index: ios/Flutter/AppFrameworkInfo.plist
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Flutter/AppFrameworkInfo.plist b/ios/Flutter/AppFrameworkInfo.plist
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Flutter/AppFrameworkInfo.plist	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++  <key>CFBundleDevelopmentRegion</key>
++  <string>en</string>
++  <key>CFBundleExecutable</key>
++  <string>App</string>
++  <key>CFBundleIdentifier</key>
++  <string>io.flutter.flutter.app</string>
++  <key>CFBundleInfoDictionaryVersion</key>
++  <string>6.0</string>
++  <key>CFBundleName</key>
++  <string>App</string>
++  <key>CFBundlePackageType</key>
++  <string>FMWK</string>
++  <key>CFBundleShortVersionString</key>
++  <string>1.0</string>
++  <key>CFBundleSignature</key>
++  <string>????</string>
++  <key>CFBundleVersion</key>
++  <string>1.0</string>
++  <key>MinimumOSVersion</key>
++  <string>12.0</string>
++</dict>
++</plist>
+Index: ios/Flutter/Debug.xcconfig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Flutter/Debug.xcconfig b/ios/Flutter/Debug.xcconfig
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Flutter/Debug.xcconfig	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,1 @@
++#include "Generated.xcconfig"
+Index: ios/Flutter/Release.xcconfig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Flutter/Release.xcconfig b/ios/Flutter/Release.xcconfig
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Flutter/Release.xcconfig	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,1 @@
++#include "Generated.xcconfig"
+Index: ios/Runner.xcodeproj/project.pbxproj
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcodeproj/project.pbxproj b/ios/Runner.xcodeproj/project.pbxproj
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcodeproj/project.pbxproj	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,616 @@
++// !$*UTF8*$!
++{
++	archiveVersion = 1;
++	classes = {
++	};
++	objectVersion = 54;
++	objects = {
++
++/* Begin PBXBuildFile section */
++		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
++		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
++		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
++		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
++		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
++		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
++		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
++/* End PBXBuildFile section */
++
++/* Begin PBXContainerItemProxy section */
++		331C8085294A63A400263BE5 /* PBXContainerItemProxy */ = {
++			isa = PBXContainerItemProxy;
++			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
++			proxyType = 1;
++			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
++			remoteInfo = Runner;
++		};
++/* End PBXContainerItemProxy section */
++
++/* Begin PBXCopyFilesBuildPhase section */
++		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
++			isa = PBXCopyFilesBuildPhase;
++			buildActionMask = 2147483647;
++			dstPath = "";
++			dstSubfolderSpec = 10;
++			files = (
++			);
++			name = "Embed Frameworks";
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXCopyFilesBuildPhase section */
++
++/* Begin PBXFileReference section */
++		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
++		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
++		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
++		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
++		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
++		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
++		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
++		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
++		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
++		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
++		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
++		97C146FB1CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
++		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
++		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
++		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
++/* End PBXFileReference section */
++
++/* Begin PBXFrameworksBuildPhase section */
++		97C146EB1CF9000F007C117D /* Frameworks */ = {
++			isa = PBXFrameworksBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXFrameworksBuildPhase section */
++
++/* Begin PBXGroup section */
++		331C8082294A63A400263BE5 /* RunnerTests */ = {
++			isa = PBXGroup;
++			children = (
++				331C807B294A618700263BE5 /* RunnerTests.swift */,
++			);
++			path = RunnerTests;
++			sourceTree = "<group>";
++		};
++		9740EEB11CF90186004384FC /* Flutter */ = {
++			isa = PBXGroup;
++			children = (
++				3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */,
++				9740EEB21CF90195004384FC /* Debug.xcconfig */,
++				7AFA3C8E1D35360C0083082E /* Release.xcconfig */,
++				9740EEB31CF90195004384FC /* Generated.xcconfig */,
++			);
++			name = Flutter;
++			sourceTree = "<group>";
++		};
++		97C146E51CF9000F007C117D = {
++			isa = PBXGroup;
++			children = (
++				9740EEB11CF90186004384FC /* Flutter */,
++				97C146F01CF9000F007C117D /* Runner */,
++				97C146EF1CF9000F007C117D /* Products */,
++				331C8082294A63A400263BE5 /* RunnerTests */,
++			);
++			sourceTree = "<group>";
++		};
++		97C146EF1CF9000F007C117D /* Products */ = {
++			isa = PBXGroup;
++			children = (
++				97C146EE1CF9000F007C117D /* Runner.app */,
++				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
++			);
++			name = Products;
++			sourceTree = "<group>";
++		};
++		97C146F01CF9000F007C117D /* Runner */ = {
++			isa = PBXGroup;
++			children = (
++				97C146FA1CF9000F007C117D /* Main.storyboard */,
++				97C146FD1CF9000F007C117D /* Assets.xcassets */,
++				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
++				97C147021CF9000F007C117D /* Info.plist */,
++				1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */,
++				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
++				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
++				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
++			);
++			path = Runner;
++			sourceTree = "<group>";
++		};
++/* End PBXGroup section */
++
++/* Begin PBXNativeTarget section */
++		331C8080294A63A400263BE5 /* RunnerTests */ = {
++			isa = PBXNativeTarget;
++			buildConfigurationList = 331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */;
++			buildPhases = (
++				331C807D294A63A400263BE5 /* Sources */,
++				331C807F294A63A400263BE5 /* Resources */,
++			);
++			buildRules = (
++			);
++			dependencies = (
++				331C8086294A63A400263BE5 /* PBXTargetDependency */,
++			);
++			name = RunnerTests;
++			productName = RunnerTests;
++			productReference = 331C8081294A63A400263BE5 /* RunnerTests.xctest */;
++			productType = "com.apple.product-type.bundle.unit-test";
++		};
++		97C146ED1CF9000F007C117D /* Runner */ = {
++			isa = PBXNativeTarget;
++			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
++			buildPhases = (
++				9740EEB61CF901F6004384FC /* Run Script */,
++				97C146EA1CF9000F007C117D /* Sources */,
++				97C146EB1CF9000F007C117D /* Frameworks */,
++				97C146EC1CF9000F007C117D /* Resources */,
++				9705A1C41CF9048500538489 /* Embed Frameworks */,
++				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
++			);
++			buildRules = (
++			);
++			dependencies = (
++			);
++			name = Runner;
++			productName = Runner;
++			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
++			productType = "com.apple.product-type.application";
++		};
++/* End PBXNativeTarget section */
++
++/* Begin PBXProject section */
++		97C146E61CF9000F007C117D /* Project object */ = {
++			isa = PBXProject;
++			attributes = {
++				BuildIndependentTargetsInParallel = YES;
++				LastUpgradeCheck = 1510;
++				ORGANIZATIONNAME = "";
++				TargetAttributes = {
++					331C8080294A63A400263BE5 = {
++						CreatedOnToolsVersion = 14.0;
++						TestTargetID = 97C146ED1CF9000F007C117D;
++					};
++					97C146ED1CF9000F007C117D = {
++						CreatedOnToolsVersion = 7.3.1;
++						LastSwiftMigration = 1100;
++					};
++				};
++			};
++			buildConfigurationList = 97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */;
++			compatibilityVersion = "Xcode 9.3";
++			developmentRegion = en;
++			hasScannedForEncodings = 0;
++			knownRegions = (
++				en,
++				Base,
++			);
++			mainGroup = 97C146E51CF9000F007C117D;
++			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
++			projectDirPath = "";
++			projectRoot = "";
++			targets = (
++				97C146ED1CF9000F007C117D /* Runner */,
++				331C8080294A63A400263BE5 /* RunnerTests */,
++			);
++		};
++/* End PBXProject section */
++
++/* Begin PBXResourcesBuildPhase section */
++		331C807F294A63A400263BE5 /* Resources */ = {
++			isa = PBXResourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++		97C146EC1CF9000F007C117D /* Resources */ = {
++			isa = PBXResourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
++				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
++				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
++				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXResourcesBuildPhase section */
++
++/* Begin PBXShellScriptBuildPhase section */
++		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
++			isa = PBXShellScriptBuildPhase;
++			alwaysOutOfDate = 1;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			inputPaths = (
++				"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}",
++			);
++			name = "Thin Binary";
++			outputPaths = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++			shellPath = /bin/sh;
++			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
++		};
++		9740EEB61CF901F6004384FC /* Run Script */ = {
++			isa = PBXShellScriptBuildPhase;
++			alwaysOutOfDate = 1;
++			buildActionMask = 2147483647;
++			files = (
++			);
++			inputPaths = (
++			);
++			name = "Run Script";
++			outputPaths = (
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++			shellPath = /bin/sh;
++			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
++		};
++/* End PBXShellScriptBuildPhase section */
++
++/* Begin PBXSourcesBuildPhase section */
++		331C807D294A63A400263BE5 /* Sources */ = {
++			isa = PBXSourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++				331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */,
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++		97C146EA1CF9000F007C117D /* Sources */ = {
++			isa = PBXSourcesBuildPhase;
++			buildActionMask = 2147483647;
++			files = (
++				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
++				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
++			);
++			runOnlyForDeploymentPostprocessing = 0;
++		};
++/* End PBXSourcesBuildPhase section */
++
++/* Begin PBXTargetDependency section */
++		331C8086294A63A400263BE5 /* PBXTargetDependency */ = {
++			isa = PBXTargetDependency;
++			target = 97C146ED1CF9000F007C117D /* Runner */;
++			targetProxy = 331C8085294A63A400263BE5 /* PBXContainerItemProxy */;
++		};
++/* End PBXTargetDependency section */
++
++/* Begin PBXVariantGroup section */
++		97C146FA1CF9000F007C117D /* Main.storyboard */ = {
++			isa = PBXVariantGroup;
++			children = (
++				97C146FB1CF9000F007C117D /* Base */,
++			);
++			name = Main.storyboard;
++			sourceTree = "<group>";
++		};
++		97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */ = {
++			isa = PBXVariantGroup;
++			children = (
++				97C147001CF9000F007C117D /* Base */,
++			);
++			name = LaunchScreen.storyboard;
++			sourceTree = "<group>";
++		};
++/* End PBXVariantGroup section */
++
++/* Begin XCBuildConfiguration section */
++		249021D3217E4FDB00AE95B9 /* Profile */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_COMMA = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
++				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
++				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
++				CLANG_WARN_STRICT_PROTOTYPES = YES;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
++				ENABLE_NS_ASSERTIONS = NO;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				ENABLE_USER_SCRIPT_SANDBOXING = NO;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
++				MTL_ENABLE_DEBUG_INFO = NO;
++				SDKROOT = iphoneos;
++				SUPPORTED_PLATFORMS = iphoneos;
++				TARGETED_DEVICE_FAMILY = "1,2";
++				VALIDATE_PRODUCT = YES;
++			};
++			name = Profile;
++		};
++		249021D4217E4FDB00AE95B9 /* Profile */ = {
++			isa = XCBuildConfiguration;
++			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
++			buildSettings = {
++				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
++				CLANG_ENABLE_MODULES = YES;
++				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
++				ENABLE_BITCODE = NO;
++				INFOPLIST_FILE = Runner/Info.plist;
++				LD_RUNPATH_SEARCH_PATHS = (
++					"$(inherited)",
++					"@executable_path/Frameworks",
++				);
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
++				SWIFT_VERSION = 5.0;
++				VERSIONING_SYSTEM = "apple-generic";
++			};
++			name = Profile;
++		};
++		331C8088294A63A400263BE5 /* Debug */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				BUNDLE_LOADER = "$(TEST_HOST)";
++				CODE_SIGN_STYLE = Automatic;
++				CURRENT_PROJECT_VERSION = 1;
++				GENERATE_INFOPLIST_FILE = YES;
++				MARKETING_VERSION = 1.0;
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled.RunnerTests;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
++				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
++				SWIFT_VERSION = 5.0;
++				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
++			};
++			name = Debug;
++		};
++		331C8089294A63A400263BE5 /* Release */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				BUNDLE_LOADER = "$(TEST_HOST)";
++				CODE_SIGN_STYLE = Automatic;
++				CURRENT_PROJECT_VERSION = 1;
++				GENERATE_INFOPLIST_FILE = YES;
++				MARKETING_VERSION = 1.0;
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled.RunnerTests;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_VERSION = 5.0;
++				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
++			};
++			name = Release;
++		};
++		331C808A294A63A400263BE5 /* Profile */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				BUNDLE_LOADER = "$(TEST_HOST)";
++				CODE_SIGN_STYLE = Automatic;
++				CURRENT_PROJECT_VERSION = 1;
++				GENERATE_INFOPLIST_FILE = YES;
++				MARKETING_VERSION = 1.0;
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled.RunnerTests;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_VERSION = 5.0;
++				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Runner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Runner";
++			};
++			name = Profile;
++		};
++		97C147031CF9000F007C117D /* Debug */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_COMMA = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
++				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
++				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
++				CLANG_WARN_STRICT_PROTOTYPES = YES;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = dwarf;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				ENABLE_TESTABILITY = YES;
++				ENABLE_USER_SCRIPT_SANDBOXING = NO;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_DYNAMIC_NO_PIC = NO;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_OPTIMIZATION_LEVEL = 0;
++				GCC_PREPROCESSOR_DEFINITIONS = (
++					"DEBUG=1",
++					"$(inherited)",
++				);
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
++				MTL_ENABLE_DEBUG_INFO = YES;
++				ONLY_ACTIVE_ARCH = YES;
++				SDKROOT = iphoneos;
++				TARGETED_DEVICE_FAMILY = "1,2";
++			};
++			name = Debug;
++		};
++		97C147041CF9000F007C117D /* Release */ = {
++			isa = XCBuildConfiguration;
++			buildSettings = {
++				ALWAYS_SEARCH_USER_PATHS = NO;
++				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
++				CLANG_ANALYZER_NONNULL = YES;
++				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
++				CLANG_CXX_LIBRARY = "libc++";
++				CLANG_ENABLE_MODULES = YES;
++				CLANG_ENABLE_OBJC_ARC = YES;
++				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
++				CLANG_WARN_BOOL_CONVERSION = YES;
++				CLANG_WARN_COMMA = YES;
++				CLANG_WARN_CONSTANT_CONVERSION = YES;
++				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
++				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
++				CLANG_WARN_EMPTY_BODY = YES;
++				CLANG_WARN_ENUM_CONVERSION = YES;
++				CLANG_WARN_INFINITE_RECURSION = YES;
++				CLANG_WARN_INT_CONVERSION = YES;
++				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
++				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
++				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
++				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
++				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
++				CLANG_WARN_STRICT_PROTOTYPES = YES;
++				CLANG_WARN_SUSPICIOUS_MOVE = YES;
++				CLANG_WARN_UNREACHABLE_CODE = YES;
++				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
++				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
++				COPY_PHASE_STRIP = NO;
++				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
++				ENABLE_NS_ASSERTIONS = NO;
++				ENABLE_STRICT_OBJC_MSGSEND = YES;
++				ENABLE_USER_SCRIPT_SANDBOXING = NO;
++				GCC_C_LANGUAGE_STANDARD = gnu99;
++				GCC_NO_COMMON_BLOCKS = YES;
++				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
++				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
++				GCC_WARN_UNDECLARED_SELECTOR = YES;
++				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
++				GCC_WARN_UNUSED_FUNCTION = YES;
++				GCC_WARN_UNUSED_VARIABLE = YES;
++				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
++				MTL_ENABLE_DEBUG_INFO = NO;
++				SDKROOT = iphoneos;
++				SUPPORTED_PLATFORMS = iphoneos;
++				SWIFT_COMPILATION_MODE = wholemodule;
++				SWIFT_OPTIMIZATION_LEVEL = "-O";
++				TARGETED_DEVICE_FAMILY = "1,2";
++				VALIDATE_PRODUCT = YES;
++			};
++			name = Release;
++		};
++		97C147061CF9000F007C117D /* Debug */ = {
++			isa = XCBuildConfiguration;
++			baseConfigurationReference = 9740EEB21CF90195004384FC /* Debug.xcconfig */;
++			buildSettings = {
++				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
++				CLANG_ENABLE_MODULES = YES;
++				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
++				ENABLE_BITCODE = NO;
++				INFOPLIST_FILE = Runner/Info.plist;
++				LD_RUNPATH_SEARCH_PATHS = (
++					"$(inherited)",
++					"@executable_path/Frameworks",
++				);
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
++				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
++				SWIFT_VERSION = 5.0;
++				VERSIONING_SYSTEM = "apple-generic";
++			};
++			name = Debug;
++		};
++		97C147071CF9000F007C117D /* Release */ = {
++			isa = XCBuildConfiguration;
++			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
++			buildSettings = {
++				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
++				CLANG_ENABLE_MODULES = YES;
++				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
++				ENABLE_BITCODE = NO;
++				INFOPLIST_FILE = Runner/Info.plist;
++				LD_RUNPATH_SEARCH_PATHS = (
++					"$(inherited)",
++					"@executable_path/Frameworks",
++				);
++				PRODUCT_BUNDLE_IDENTIFIER = com.example.untitled;
++				PRODUCT_NAME = "$(TARGET_NAME)";
++				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
++				SWIFT_VERSION = 5.0;
++				VERSIONING_SYSTEM = "apple-generic";
++			};
++			name = Release;
++		};
++/* End XCBuildConfiguration section */
++
++/* Begin XCConfigurationList section */
++		331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */ = {
++			isa = XCConfigurationList;
++			buildConfigurations = (
++				331C8088294A63A400263BE5 /* Debug */,
++				331C8089294A63A400263BE5 /* Release */,
++				331C808A294A63A400263BE5 /* Profile */,
++			);
++			defaultConfigurationIsVisible = 0;
++			defaultConfigurationName = Release;
++		};
++		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
++			isa = XCConfigurationList;
++			buildConfigurations = (
++				97C147031CF9000F007C117D /* Debug */,
++				97C147041CF9000F007C117D /* Release */,
++				249021D3217E4FDB00AE95B9 /* Profile */,
++			);
++			defaultConfigurationIsVisible = 0;
++			defaultConfigurationName = Release;
++		};
++		97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */ = {
++			isa = XCConfigurationList;
++			buildConfigurations = (
++				97C147061CF9000F007C117D /* Debug */,
++				97C147071CF9000F007C117D /* Release */,
++				249021D4217E4FDB00AE95B9 /* Profile */,
++			);
++			defaultConfigurationIsVisible = 0;
++			defaultConfigurationName = Release;
++		};
++/* End XCConfigurationList section */
++	};
++	rootObject = 97C146E61CF9000F007C117D /* Project object */;
++}
+Index: ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata b/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<Workspace
++   version = "1.0">
++   <FileRef
++      location = "self:">
++   </FileRef>
++</Workspace>
+Index: ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist b/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>IDEDidComputeMac32BitWarning</key>
++	<true/>
++</dict>
++</plist>
+Index: ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings b/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>PreviewsEnabled</key>
++	<false/>
++</dict>
++</plist>
+Index: ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme b/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,98 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<Scheme
++   LastUpgradeVersion = "1510"
++   version = "1.3">
++   <BuildAction
++      parallelizeBuildables = "YES"
++      buildImplicitDependencies = "YES">
++      <BuildActionEntries>
++         <BuildActionEntry
++            buildForTesting = "YES"
++            buildForRunning = "YES"
++            buildForProfiling = "YES"
++            buildForArchiving = "YES"
++            buildForAnalyzing = "YES">
++            <BuildableReference
++               BuildableIdentifier = "primary"
++               BlueprintIdentifier = "97C146ED1CF9000F007C117D"
++               BuildableName = "Runner.app"
++               BlueprintName = "Runner"
++               ReferencedContainer = "container:Runner.xcodeproj">
++            </BuildableReference>
++         </BuildActionEntry>
++      </BuildActionEntries>
++   </BuildAction>
++   <TestAction
++      buildConfiguration = "Debug"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
++      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
++      shouldUseLaunchSchemeArgsEnv = "YES">
++      <MacroExpansion>
++         <BuildableReference
++            BuildableIdentifier = "primary"
++            BlueprintIdentifier = "97C146ED1CF9000F007C117D"
++            BuildableName = "Runner.app"
++            BlueprintName = "Runner"
++            ReferencedContainer = "container:Runner.xcodeproj">
++         </BuildableReference>
++      </MacroExpansion>
++      <Testables>
++         <TestableReference
++            skipped = "NO"
++            parallelizable = "YES">
++            <BuildableReference
++               BuildableIdentifier = "primary"
++               BlueprintIdentifier = "331C8080294A63A400263BE5"
++               BuildableName = "RunnerTests.xctest"
++               BlueprintName = "RunnerTests"
++               ReferencedContainer = "container:Runner.xcodeproj">
++            </BuildableReference>
++         </TestableReference>
++      </Testables>
++   </TestAction>
++   <LaunchAction
++      buildConfiguration = "Debug"
++      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
++      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
++      launchStyle = "0"
++      useCustomWorkingDirectory = "NO"
++      ignoresPersistentStateOnLaunch = "NO"
++      debugDocumentVersioning = "YES"
++      debugServiceExtension = "internal"
++      allowLocationSimulation = "YES">
++      <BuildableProductRunnable
++         runnableDebuggingMode = "0">
++         <BuildableReference
++            BuildableIdentifier = "primary"
++            BlueprintIdentifier = "97C146ED1CF9000F007C117D"
++            BuildableName = "Runner.app"
++            BlueprintName = "Runner"
++            ReferencedContainer = "container:Runner.xcodeproj">
++         </BuildableReference>
++      </BuildableProductRunnable>
++   </LaunchAction>
++   <ProfileAction
++      buildConfiguration = "Profile"
++      shouldUseLaunchSchemeArgsEnv = "YES"
++      savedToolIdentifier = ""
++      useCustomWorkingDirectory = "NO"
++      debugDocumentVersioning = "YES">
++      <BuildableProductRunnable
++         runnableDebuggingMode = "0">
++         <BuildableReference
++            BuildableIdentifier = "primary"
++            BlueprintIdentifier = "97C146ED1CF9000F007C117D"
++            BuildableName = "Runner.app"
++            BlueprintName = "Runner"
++            ReferencedContainer = "container:Runner.xcodeproj">
++         </BuildableReference>
++      </BuildableProductRunnable>
++   </ProfileAction>
++   <AnalyzeAction
++      buildConfiguration = "Debug">
++   </AnalyzeAction>
++   <ArchiveAction
++      buildConfiguration = "Release"
++      revealArchiveInOrganizer = "YES">
++   </ArchiveAction>
++</Scheme>
+Index: ios/Runner.xcworkspace/contents.xcworkspacedata
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcworkspace/contents.xcworkspacedata b/ios/Runner.xcworkspace/contents.xcworkspacedata
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcworkspace/contents.xcworkspacedata	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<Workspace
++   version = "1.0">
++   <FileRef
++      location = "group:Runner.xcodeproj">
++   </FileRef>
++</Workspace>
+Index: ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist b/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>IDEDidComputeMac32BitWarning</key>
++	<true/>
++</dict>
++</plist>
+Index: ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings b/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>PreviewsEnabled</key>
++	<false/>
++</dict>
++</plist>
+Index: ios/Runner/AppDelegate.swift
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/AppDelegate.swift b/ios/Runner/AppDelegate.swift
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/AppDelegate.swift	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,13 @@
++import UIKit
++import Flutter
++
++@UIApplicationMain
++@objc class AppDelegate: FlutterAppDelegate {
++  override func application(
++    _ application: UIApplication,
++    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
++  ) -> Bool {
++    GeneratedPluginRegistrant.register(with: self)
++    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
++  }
++}
+Index: ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,122 @@
++{
++  "images" : [
++    {
++      "size" : "20x20",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-20x20@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "20x20",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-20x20@3x.png",
++      "scale" : "3x"
++    },
++    {
++      "size" : "29x29",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-29x29@1x.png",
++      "scale" : "1x"
++    },
++    {
++      "size" : "29x29",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-29x29@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "29x29",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-29x29@3x.png",
++      "scale" : "3x"
++    },
++    {
++      "size" : "40x40",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-40x40@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "40x40",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-40x40@3x.png",
++      "scale" : "3x"
++    },
++    {
++      "size" : "60x60",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-60x60@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "60x60",
++      "idiom" : "iphone",
++      "filename" : "Icon-App-60x60@3x.png",
++      "scale" : "3x"
++    },
++    {
++      "size" : "20x20",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-20x20@1x.png",
++      "scale" : "1x"
++    },
++    {
++      "size" : "20x20",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-20x20@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "29x29",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-29x29@1x.png",
++      "scale" : "1x"
++    },
++    {
++      "size" : "29x29",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-29x29@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "40x40",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-40x40@1x.png",
++      "scale" : "1x"
++    },
++    {
++      "size" : "40x40",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-40x40@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "76x76",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-76x76@1x.png",
++      "scale" : "1x"
++    },
++    {
++      "size" : "76x76",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-76x76@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "83.5x83.5",
++      "idiom" : "ipad",
++      "filename" : "Icon-App-83.5x83.5@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "size" : "1024x1024",
++      "idiom" : "ios-marketing",
++      "filename" : "Icon-App-1024x1024@1x.png",
++      "scale" : "1x"
++    }
++  ],
++  "info" : {
++    "version" : 1,
++    "author" : "xcode"
++  }
++}
+Index: ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json b/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,23 @@
++{
++  "images" : [
++    {
++      "idiom" : "universal",
++      "filename" : "LaunchImage.png",
++      "scale" : "1x"
++    },
++    {
++      "idiom" : "universal",
++      "filename" : "LaunchImage@2x.png",
++      "scale" : "2x"
++    },
++    {
++      "idiom" : "universal",
++      "filename" : "LaunchImage@3x.png",
++      "scale" : "3x"
++    }
++  ],
++  "info" : {
++    "version" : 1,
++    "author" : "xcode"
++  }
++}
+Index: ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md b/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,5 @@
++# Launch Screen Assets
++
++You can customize the launch screen with your own desired assets by replacing the image files in this directory.
++
++You can also do it by opening your Flutter project's Xcode project with `open ios/Runner.xcworkspace`, selecting `Runner/Assets.xcassets` in the Project Navigator and dropping in the desired images.
+\ No newline at end of file
+Index: ios/Runner/Base.lproj/LaunchScreen.storyboard
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Base.lproj/LaunchScreen.storyboard b/ios/Runner/Base.lproj/LaunchScreen.storyboard
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Base.lproj/LaunchScreen.storyboard	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
++    <dependencies>
++        <deployment identifier="iOS"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
++    </dependencies>
++    <scenes>
++        <!--View Controller-->
++        <scene sceneID="EHf-IW-A2E">
++            <objects>
++                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
++                    <layoutGuides>
++                        <viewControllerLayoutGuide type="top" id="Ydg-fD-yQy"/>
++                        <viewControllerLayoutGuide type="bottom" id="xbc-2k-c8Z"/>
++                    </layoutGuides>
++                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
++                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
++                        <subviews>
++                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
++                            </imageView>
++                        </subviews>
++                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
++                        <constraints>
++                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC"/>
++                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a"/>
++                        </constraints>
++                    </view>
++                </viewController>
++                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
++            </objects>
++            <point key="canvasLocation" x="53" y="375"/>
++        </scene>
++    </scenes>
++    <resources>
++        <image name="LaunchImage" width="168" height="185"/>
++    </resources>
++</document>
+Index: ios/Runner/Base.lproj/Main.storyboard
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Base.lproj/Main.storyboard b/ios/Runner/Base.lproj/Main.storyboard
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Base.lproj/Main.storyboard	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
++<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
++    <dependencies>
++        <deployment identifier="iOS"/>
++        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
++    </dependencies>
++    <scenes>
++        <!--Flutter View Controller-->
++        <scene sceneID="tne-QT-ifu">
++            <objects>
++                <viewController id="BYZ-38-t0r" customClass="FlutterViewController" sceneMemberID="viewController">
++                    <layoutGuides>
++                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
++                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
++                    </layoutGuides>
++                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
++                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
++                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
++                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
++                    </view>
++                </viewController>
++                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
++            </objects>
++        </scene>
++    </scenes>
++</document>
+Index: ios/Runner/Info.plist
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Info.plist b/ios/Runner/Info.plist
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Info.plist	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,49 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>CFBundleDevelopmentRegion</key>
++	<string>$(DEVELOPMENT_LANGUAGE)</string>
++	<key>CFBundleDisplayName</key>
++	<string>Untitled</string>
++	<key>CFBundleExecutable</key>
++	<string>$(EXECUTABLE_NAME)</string>
++	<key>CFBundleIdentifier</key>
++	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
++	<key>CFBundleInfoDictionaryVersion</key>
++	<string>6.0</string>
++	<key>CFBundleName</key>
++	<string>untitled</string>
++	<key>CFBundlePackageType</key>
++	<string>APPL</string>
++	<key>CFBundleShortVersionString</key>
++	<string>$(FLUTTER_BUILD_NAME)</string>
++	<key>CFBundleSignature</key>
++	<string>????</string>
++	<key>CFBundleVersion</key>
++	<string>$(FLUTTER_BUILD_NUMBER)</string>
++	<key>LSRequiresIPhoneOS</key>
++	<true/>
++	<key>UILaunchStoryboardName</key>
++	<string>LaunchScreen</string>
++	<key>UIMainStoryboardFile</key>
++	<string>Main</string>
++	<key>UISupportedInterfaceOrientations</key>
++	<array>
++		<string>UIInterfaceOrientationPortrait</string>
++		<string>UIInterfaceOrientationLandscapeLeft</string>
++		<string>UIInterfaceOrientationLandscapeRight</string>
++	</array>
++	<key>UISupportedInterfaceOrientations~ipad</key>
++	<array>
++		<string>UIInterfaceOrientationPortrait</string>
++		<string>UIInterfaceOrientationPortraitUpsideDown</string>
++		<string>UIInterfaceOrientationLandscapeLeft</string>
++		<string>UIInterfaceOrientationLandscapeRight</string>
++	</array>
++	<key>CADisableMinimumFrameDurationOnPhone</key>
++	<true/>
++	<key>UIApplicationSupportsIndirectInputEvents</key>
++	<true/>
++</dict>
++</plist>
+Index: ios/Runner/Runner-Bridging-Header.h
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/Runner/Runner-Bridging-Header.h b/ios/Runner/Runner-Bridging-Header.h
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/Runner/Runner-Bridging-Header.h	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,1 @@
++#import "GeneratedPluginRegistrant.h"
+Index: ios/RunnerTests/RunnerTests.swift
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ios/RunnerTests/RunnerTests.swift b/ios/RunnerTests/RunnerTests.swift
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/ios/RunnerTests/RunnerTests.swift	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,12 @@
++import Flutter
++import UIKit
++import XCTest
++
++class RunnerTests: XCTestCase {
++
++  func testExample() {
++    // If you add code to the Runner application, consider adding tests here.
++    // See https://developer.apple.com/documentation/xctest for more information about using XCTest.
++  }
++
++}
+Index: lib/main.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/main.dart b/lib/main.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/main.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,54 @@
++import 'package:flutter/material.dart';
++import 'package:untitled/newpage.dart';
++import 'package:untitled/pagina21.dart';
++import 'package:untitled/pagina_principal.dart';
++
++
++void main() {
++  runApp(const MyApp());
++
++}
++
++class MyApp extends StatelessWidget {
++  const MyApp({super.key});
++
++  // This widget is the root of your application.
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      title: 'Flutter Demo',
++      debugShowCheckedModeBanner: false,
++      theme: ThemeData(
++        // This is the theme of your application.
++        //
++        // TRY THIS: Try running your application with "flutter run". You'll see
++        // the application has a purple toolbar. Then, without quitting the app,
++        // try changing the seedColor in the colorScheme below to Colors.green
++        // and then invoke "hot reload" (save your changes or press the "hot
++        // reload" button in a Flutter-supported IDE, or press "r" if you used
++        // the command line to start the app).
++        //
++        // Notice that the counter didn't reset back to zero; the application
++        // state is not lost during the reload. To reset the state, use hot
++        // restart instead.
++        //
++        // This works for code too, not just values: Most code changes can be
++        // tested with just a hot reload.
++        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
++        useMaterial3: true,
++        appBarTheme: const AppBarTheme(
++          backgroundColor: Colors.black,
++          iconTheme: IconThemeData(
++              color: Colors.white
++          ),
++          titleTextStyle: TextStyle(color: Colors.white, fontSize: 30),
++        )
++      ),
++      home: const Newpage(),
++    );
++  }
++}
++
++
++
++
+Index: lib/my_home_page.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/my_home_page.dart b/lib/my_home_page.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/my_home_page.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,41 @@
++import 'package:flutter/material.dart';
++
++class MyHomePage extends StatelessWidget {
++  // não pode ser modificada; Statefullwidget pode ser modificada
++  const MyHomePage({super.key});
++
++  @override
++  Widget build(BuildContext context) {
++    const Text("Texto grandão");
++
++    return Scaffold(
++      appBar: AppBar(
++        backgroundColor: Theme.of(context).colorScheme.primary,
++        title: const Text("Gabriel's App"),
++      ),
++      floatingActionButton: FloatingActionButton(
++        onPressed: () {
++          final snackBar = SnackBar(
++            content:
++                const Text('Ja contou pros seus pais que eres homossexual?'),
++            action: SnackBarAction(
++              label: 'talvez',
++              textColor: Colors.yellow,
++              onPressed: () {
++                // Some code to undo the change.
++              },
++            ),
++          );
++
++          ScaffoldMessenger.of(context).showSnackBar(snackBar);
++        },
++        child: const Icon(Icons.add),
++      ),
++      body: const Center(
++          child: Text(
++        "Texto grandão",
++        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
++      )),
++    );
++  }
++}
+Index: lib/newpage.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/newpage.dart b/lib/newpage.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/newpage.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,46 @@
++import 'package:flutter/material.dart';
++
++class Newpage extends StatefulWidget {
++  const Newpage({super.key});
++
++  @override
++  State<Newpage> createState() => _Newpage();
++}
++
++class _Newpage extends State<Newpage> {
++  final myController = TextEditingController();
++  var texto = "";
++  @override
++  Widget build(BuildContext context) {
++    return Scaffold(
++      appBar: AppBar(
++        title: Text("Aula 07/06 - Stateful Widget"),
++      ),
++      floatingActionButton: FloatingActionButton(
++        onPressed: () {
++          setState(() {
++            texto = myController.text;
++          });
++        },
++        child: Icon(Icons.rocket),
++      ),
++      body: Column(
++        mainAxisAlignment: MainAxisAlignment.center,
++        crossAxisAlignment: CrossAxisAlignment.center,
++        children: [
++          TextField(
++            controller: myController,
++            decoration: InputDecoration(
++              border: OutlineInputBorder(),
++              hintText: 'Insira um texto',
++            ),
++          ),
++          Text(
++            texto,
++            style: TextStyle(fontSize: 36),
++          )
++        ],
++      ),
++    );
++  }
++}
+Index: lib/pagina21.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/pagina21.dart b/lib/pagina21.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/pagina21.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,121 @@
++import 'package:flutter/material.dart';
++
++class Pagina21 extends StatelessWidget {
++  const Pagina21({super.key});
++
++  @override
++  Widget build(BuildContext context) {
++    final ButtonStyle style =
++    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
++    var EstiloTexto =
++        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
++    return Scaffold(
++      appBar: AppBar(
++        backgroundColor: Theme.of(context).colorScheme.primary,
++        title: const Text("SCP Documents 21"),
++      ),
++      body: Column(
++
++        crossAxisAlignment: CrossAxisAlignment.center,
++
++        children: [
++
++          Text(
++            "Texto da linha 1",
++            style: EstiloTexto,
++          ),
++          Text("linha 2"),
++
++          Text(
++            "Texto da linha 3",
++            style: EstiloTexto,
++          ),
++          Text("linha 4"),
++
++          Text(
++            "Texto da linha 5",
++            style: EstiloTexto,
++          ),
++
++          SizedBox(height: 15),
++
++          Row(
++
++            mainAxisAlignment: MainAxisAlignment.spaceBetween,
++
++            children: [
++
++              SizedBox(width: 32),
++              Text("linha x",
++                style: EstiloTexto,
++              ),
++
++              Text("linha x"),
++
++              Icon(Icons.rocket_launch_sharp),
++
++              Text("linha x"),
++
++              Text("linha x",
++                style: EstiloTexto,
++              ),
++
++              SizedBox(width: 32),
++
++            ],
++          ),
++
++          Row(
++
++            mainAxisAlignment: MainAxisAlignment.spaceBetween,
++
++            children: [
++
++              SizedBox(width: 32),
++              ElevatedButton(
++                style: style,
++                onPressed: () {},
++                child: const Text('Enabled'),
++              ),
++
++              // ElevatedButton.icon(onPressed: (){}, label: Icon(Icons.radio), icon: Text('radio')
++              // ),
++              ElevatedButton.icon(onPressed: (){}, label: Icon(Icons.radio), icon: Text('radio')
++              ),
++
++              ElevatedButton(
++                style: style,
++                onPressed: () {},
++                child: const Text('Enabled'),
++              ),
++
++              SizedBox(width: 32),
++
++            ],
++          ),
++
++          Expanded(
++            child: Center(
++
++              child: Text("Texto no meio",
++              style: EstiloTexto,
++              ),
++
++            ),
++          ),
++
++          // Row(
++          //   children: <Widget>[
++          //     Expanded(
++          //       child: Text('Deliver features faster', textAlign: TextAlign.center),
++          //     ),
++          //     Expanded(
++          //       child: Text('Craft beautiful UIs', textAlign: TextAlign.center),
++          //     ),
++          //   ],
++          // )
++        ],
++      ),
++    );
++  }
++}
+Index: lib/pagina_principal.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/pagina_principal.dart b/lib/pagina_principal.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/pagina_principal.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,115 @@
++import 'package:flutter/material.dart';
++import 'package:untitled/pagina_secundaria.dart';
++
++class Pagina_Principal extends StatelessWidget {
++  const Pagina_Principal({super.key});
++
++  @override
++  Widget build(BuildContext context) {
++    final ButtonStyle style =
++        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
++    var EstiloTexto =
++        const TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
++    return Scaffold(
++      appBar: AppBar(
++        title: Center(
++          child: Text(
++            "Pagina Principal",
++            textAlign: TextAlign.left,
++          ),
++        ),
++      ),
++      drawer: SafeArea(
++        child: Drawer(
++          child: ListView(
++            children: [
++              UserAccountsDrawerHeader(
++                currentAccountPicture: CircleAvatar(
++                  child: Icon(Icons.accessibility_new),
++                ),
++                accountName: Text(
++                  "Gabriel Vieira Caires de Almeida",
++                  style: TextStyle(fontWeight: FontWeight.bold),
++                ),
++                accountEmail: Text(
++                  "gabriel.8947@aluno.pr.senac.br",
++                  style: TextStyle(fontWeight: FontWeight.bold),
++                ),
++                decoration: BoxDecoration(
++                  image: DecorationImage(
++                      image: NetworkImage(
++                          "https://super.abril.com.br/wp-content/uploads/2019/09/bh_accretiondisk_sim_stationary_websize.gif?w=720&h=440&crop=1"),
++                      fit: BoxFit.fill),
++                ),
++              ),
++              ListTile(
++                leading: Icon(Icons.accessibility_new_outlined),
++                title: Text("Sukuna"),
++                trailing: Icon(Icons.keyboard_arrow_right),
++                onTap: () {
++                  Navigator.pop(context);
++                },
++              ),
++              Divider(
++                height: 15,
++                thickness: 2,
++              ),
++              ListTile(
++                leading: Icon(Icons.accessibility),
++                title: Text("Gojo"),
++                trailing: Icon(Icons.keyboard_arrow_right),
++              ),
++              Divider(
++                height: 15,
++                thickness: 2,
++              ),
++              ListTile(
++                leading: Icon(Icons.accessibility_new),
++                title: Text("Itadori"),
++                trailing: Icon(Icons.keyboard_arrow_right),
++              ),
++              Divider(
++                height: 15,
++                thickness: 2,
++              ),
++            ],
++          ),
++        ),
++      ),
++      body: Column(
++        crossAxisAlignment: CrossAxisAlignment.center,
++        children: [
++          Expanded(
++            child: Center(
++              child: ElevatedButton(
++                style: const ButtonStyle(
++                    backgroundColor:
++                        MaterialStatePropertyAll<Color>(Colors.black38)),
++                child: const Text('Pagina Secundária',
++                    style: TextStyle(color: Colors.white)),
++                onPressed: () {
++                  Navigator.push(
++                    context,
++                    MaterialPageRoute(
++                        builder: (context) => Pagina_Secundaria()),
++                  );
++                },
++              ),
++            ),
++          ),
++
++          // Row(
++          //   children: <Widget>[
++          //     Expanded(
++          //       child: Text('Deliver features faster', textAlign: TextAlign.center),
++          //     ),
++          //     Expanded(
++          //       child: Text('Craft beautiful UIs', textAlign: TextAlign.center),
++          //     ),
++          //   ],
++          // )
++        ],
++      ),
++    );
++  }
++}
+Index: lib/pagina_secundaria.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/pagina_secundaria.dart b/lib/pagina_secundaria.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/lib/pagina_secundaria.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,51 @@
++import 'package:flutter/material.dart';
++
++class Pagina_Secundaria extends StatelessWidget {
++  const Pagina_Secundaria({super.key});
++
++  @override
++  Widget build(BuildContext context) {
++    final ButtonStyle style =
++        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
++    return Scaffold(
++      appBar: AppBar(
++        title: Center(
++          child: Text(
++            "Pagina Secundaria",
++            textAlign: TextAlign.left,
++          ),
++        ),
++      ),
++      body: Column(
++        crossAxisAlignment: CrossAxisAlignment.center,
++        children: [
++          Expanded(
++            child: Center(
++              child: ElevatedButton(
++                style: const ButtonStyle(
++                    backgroundColor:
++                        MaterialStatePropertyAll<Color>(Colors.black38)),
++                child: const Text('Pagina Principal',
++                    style: TextStyle(color: Colors.white)),
++                onPressed: () {
++                  Navigator.pop(context);
++                },
++              ),
++            ),
++          ),
++
++          // Row(
++          //   children: <Widget>[
++          //     Expanded(
++          //       child: Text('Deliver features faster', textAlign: TextAlign.center),
++          //     ),
++          //     Expanded(
++          //       child: Text('Craft beautiful UIs', textAlign: TextAlign.center),
++          //     ),
++          //   ],
++          // )
++        ],
++      ),
++    );
++  }
++}
+Index: pubspec.lock
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pubspec.lock b/pubspec.lock
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/pubspec.lock	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,221 @@
++# Generated by pub
++# See https://dart.dev/tools/pub/glossary#lockfile
++packages:
++  animated_text_kit:
++    dependency: "direct main"
++    description:
++      name: animated_text_kit
++      sha256: "37392a5376c9a1a503b02463c38bc0342ef814ddbb8f9977bc90f2a84b22fa92"
++      url: "https://pub.dev"
++    source: hosted
++    version: "4.2.2"
++  async:
++    dependency: transitive
++    description:
++      name: async
++      sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.11.0"
++  boolean_selector:
++    dependency: transitive
++    description:
++      name: boolean_selector
++      sha256: "6cfb5af12253eaf2b368f07bacc5a80d1301a071c73360d746b7f2e32d762c66"
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.1.1"
++  characters:
++    dependency: transitive
++    description:
++      name: characters
++      sha256: "04a925763edad70e8443c99234dc3328f442e811f1d8fd1a72f1c8ad0f69a605"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.3.0"
++  clock:
++    dependency: transitive
++    description:
++      name: clock
++      sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.1.1"
++  collection:
++    dependency: transitive
++    description:
++      name: collection
++      sha256: ee67cb0715911d28db6bf4af1026078bd6f0128b07a5f66fb2ed94ec6783c09a
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.18.0"
++  cupertino_icons:
++    dependency: "direct main"
++    description:
++      name: cupertino_icons
++      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.0.8"
++  fake_async:
++    dependency: transitive
++    description:
++      name: fake_async
++      sha256: "511392330127add0b769b75a987850d136345d9227c6b94c96a04cf4a391bf78"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.3.1"
++  flutter:
++    dependency: "direct main"
++    description: flutter
++    source: sdk
++    version: "0.0.0"
++  flutter_lints:
++    dependency: "direct dev"
++    description:
++      name: flutter_lints
++      sha256: "9e8c3858111da373efc5aa341de011d9bd23e2c5c5e0c62bccf32438e192d7b1"
++      url: "https://pub.dev"
++    source: hosted
++    version: "3.0.2"
++  flutter_test:
++    dependency: "direct dev"
++    description: flutter
++    source: sdk
++    version: "0.0.0"
++  leak_tracker:
++    dependency: transitive
++    description:
++      name: leak_tracker
++      sha256: "78eb209deea09858f5269f5a5b02be4049535f568c07b275096836f01ea323fa"
++      url: "https://pub.dev"
++    source: hosted
++    version: "10.0.0"
++  leak_tracker_flutter_testing:
++    dependency: transitive
++    description:
++      name: leak_tracker_flutter_testing
++      sha256: b46c5e37c19120a8a01918cfaf293547f47269f7cb4b0058f21531c2465d6ef0
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.0.1"
++  leak_tracker_testing:
++    dependency: transitive
++    description:
++      name: leak_tracker_testing
++      sha256: a597f72a664dbd293f3bfc51f9ba69816f84dcd403cdac7066cb3f6003f3ab47
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.0.1"
++  lints:
++    dependency: transitive
++    description:
++      name: lints
++      sha256: cbf8d4b858bb0134ef3ef87841abdf8d63bfc255c266b7bf6b39daa1085c4290
++      url: "https://pub.dev"
++    source: hosted
++    version: "3.0.0"
++  matcher:
++    dependency: transitive
++    description:
++      name: matcher
++      sha256: d2323aa2060500f906aa31a895b4030b6da3ebdcc5619d14ce1aada65cd161cb
++      url: "https://pub.dev"
++    source: hosted
++    version: "0.12.16+1"
++  material_color_utilities:
++    dependency: transitive
++    description:
++      name: material_color_utilities
++      sha256: "0e0a020085b65b6083975e499759762399b4475f766c21668c4ecca34ea74e5a"
++      url: "https://pub.dev"
++    source: hosted
++    version: "0.8.0"
++  meta:
++    dependency: transitive
++    description:
++      name: meta
++      sha256: d584fa6707a52763a52446f02cc621b077888fb63b93bbcb1143a7be5a0c0c04
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.11.0"
++  path:
++    dependency: transitive
++    description:
++      name: path
++      sha256: "087ce49c3f0dc39180befefc60fdb4acd8f8620e5682fe2476afd0b3688bb4af"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.9.0"
++  sky_engine:
++    dependency: transitive
++    description: flutter
++    source: sdk
++    version: "0.0.99"
++  source_span:
++    dependency: transitive
++    description:
++      name: source_span
++      sha256: "53e943d4206a5e30df338fd4c6e7a077e02254531b138a15aec3bd143c1a8b3c"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.10.0"
++  stack_trace:
++    dependency: transitive
++    description:
++      name: stack_trace
++      sha256: "73713990125a6d93122541237550ee3352a2d84baad52d375a4cad2eb9b7ce0b"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.11.1"
++  stream_channel:
++    dependency: transitive
++    description:
++      name: stream_channel
++      sha256: ba2aa5d8cc609d96bbb2899c28934f9e1af5cddbd60a827822ea467161eb54e7
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.1.2"
++  string_scanner:
++    dependency: transitive
++    description:
++      name: string_scanner
++      sha256: "556692adab6cfa87322a115640c11f13cb77b3f076ddcc5d6ae3c20242bedcde"
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.2.0"
++  term_glyph:
++    dependency: transitive
++    description:
++      name: term_glyph
++      sha256: a29248a84fbb7c79282b40b8c72a1209db169a2e0542bce341da992fe1bc7e84
++      url: "https://pub.dev"
++    source: hosted
++    version: "1.2.1"
++  test_api:
++    dependency: transitive
++    description:
++      name: test_api
++      sha256: "5c2f730018264d276c20e4f1503fd1308dfbbae39ec8ee63c5236311ac06954b"
++      url: "https://pub.dev"
++    source: hosted
++    version: "0.6.1"
++  vector_math:
++    dependency: transitive
++    description:
++      name: vector_math
++      sha256: "80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803"
++      url: "https://pub.dev"
++    source: hosted
++    version: "2.1.4"
++  vm_service:
++    dependency: transitive
++    description:
++      name: vm_service
++      sha256: b3d56ff4341b8f182b96aceb2fa20e3dcb336b9f867bc0eafc0de10f1048e957
++      url: "https://pub.dev"
++    source: hosted
++    version: "13.0.0"
++sdks:
++  dart: ">=3.3.3 <4.0.0"
++  flutter: ">=1.22.0"
+Index: pubspec.yaml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pubspec.yaml b/pubspec.yaml
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/pubspec.yaml	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,91 @@
++name: untitled
++description: "A new Flutter project."
++# The following line prevents the package from being accidentally published to
++# pub.dev using `flutter pub publish`. This is preferred for private packages.
++publish_to: 'none' # Remove this line if you wish to publish to pub.dev
++
++# The following defines the version and build number for your application.
++# A version number is three numbers separated by dots, like 1.2.43
++# followed by an optional build number separated by a +.
++# Both the version and the builder number may be overridden in flutter
++# build by specifying --build-name and --build-number, respectively.
++# In Android, build-name is used as versionName while build-number used as versionCode.
++# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
++# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
++# Read more about iOS versioning at
++# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
++# In Windows, build-name is used as the major, minor, and patch parts
++# of the product and file versions while build-number is used as the build suffix.
++version: 1.0.0+1
++
++environment:
++  sdk: '>=3.3.3 <4.0.0'
++
++# Dependencies specify other packages that your package needs in order to work.
++# To automatically upgrade your package dependencies to the latest versions
++# consider running `flutter pub upgrade --major-versions`. Alternatively,
++# dependencies can be manually updated by changing the version numbers below to
++# the latest version available on pub.dev. To see which dependencies have newer
++# versions available, run `flutter pub outdated`.
++dependencies:
++  flutter:
++    sdk: flutter
++
++
++  # The following adds the Cupertino Icons font to your application.
++  # Use with the CupertinoIcons class for iOS style icons.
++  cupertino_icons: ^1.0.6
++  animated_text_kit: ^4.2.2
++
++dev_dependencies:
++  flutter_test:
++    sdk: flutter
++
++  # The "flutter_lints" package below contains a set of recommended lints to
++  # encourage good coding practices. The lint set provided by the package is
++  # activated in the `analysis_options.yaml` file located at the root of your
++  # package. See that file for information about deactivating specific lint
++  # rules and activating additional ones.
++  flutter_lints: ^3.0.0
++
++# For information on the generic Dart part of this file, see the
++# following page: https://dart.dev/tools/pub/pubspec
++
++# The following section is specific to Flutter packages.
++flutter:
++
++  # The following line ensures that the Material Icons font is
++  # included with your application, so that you can use the icons in
++  # the material Icons class.
++  uses-material-design: true
++
++  # To add assets to your application, add an assets section, like this:
++  # assets:
++  #   - images/a_dot_burr.jpeg
++  #   - images/a_dot_ham.jpeg
++
++  # An image asset can refer to one or more resolution-specific "variants", see
++  # https://flutter.dev/assets-and-images/#resolution-aware
++
++  # For details regarding adding assets from package dependencies, see
++  # https://flutter.dev/assets-and-images/#from-packages
++
++  # To add custom fonts to your application, add a fonts section here,
++  # in this "flutter" section. Each entry in this list should have a
++  # "family" key with the font family name, and a "fonts" key with a
++  # list giving the asset and other descriptors for the font. For
++  # example:
++  # fonts:
++  #   - family: Schyler
++  #     fonts:
++  #       - asset: fonts/Schyler-Regular.ttf
++  #       - asset: fonts/Schyler-Italic.ttf
++  #         style: italic
++  #   - family: Trajan Pro
++  #     fonts:
++  #       - asset: fonts/TrajanPro.ttf
++  #       - asset: fonts/TrajanPro_Bold.ttf
++  #         weight: 700
++  #
++  # For details regarding fonts from package dependencies,
++  # see https://flutter.dev/custom-fonts/#from-packages
+Index: test/widget_test.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test/widget_test.dart b/test/widget_test.dart
+new file mode 100644
+--- /dev/null	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
++++ b/test/widget_test.dart	(revision 0cef665aea07a81458e4ea69fd8716724e91ac1e)
+@@ -0,0 +1,30 @@
++// This is a basic Flutter widget test.
++//
++// To perform an interaction with a widget in your test, use the WidgetTester
++// utility in the flutter_test package. For example, you can send tap and scroll
++// gestures. You can also use WidgetTester to find child widgets in the widget
++// tree, read text, and verify that the values of widget properties are correct.
++
++import 'package:flutter/material.dart';
++import 'package:flutter_test/flutter_test.dart';
++
++import 'package:untitled/main.dart';
++
++void main() {
++  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
++    // Build our app and trigger a frame.
++    await tester.pumpWidget(const MyApp());
++
++    // Verify that our counter starts at 0.
++    expect(find.text('0'), findsOneWidget);
++    expect(find.text('1'), findsNothing);
++
++    // Tap the '+' icon and trigger a frame.
++    await tester.tap(find.byIcon(Icons.add));
++    await tester.pump();
++
++    // Verify that our counter has incremented.
++    expect(find.text('0'), findsNothing);
++    expect(find.text('1'), findsOneWidget);
++  });
++}
+diff --git a/android/app/src/main/res/mipmap-hdpi/ic_launcher.png b/android/app/src/main/res/mipmap-hdpi/ic_launcher.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..db77bb4b7b0906d62b1847e87f15cdcacf6a4f29
+GIT binary patch
+literal 544
+zc%17D@N?(olHy`uVBq!ia0vp^9w5xY3?!3`olAj~WQl7;NpOBzNqJ&XDuZK6ep0G}
+zXKrG8YEWuoN@d~6R2!h8bpbvhu0Wd6uZuB!w&u2PAxD2eNXD>P5D~Wn-+^4P$V{M!
+zMA=e^0^4<u8H^$sEK(S?y%`OH8SU~I?eZDj>lr<p7=7A72Ksd~`t>jdPGk(4#27T0
+zF?b4N=yb-=8H`~wz=ng&XR=ObawuSOE@Sd+VD@ce_U~d2=oZVEAf7){vSOK3-3ICA
+zZPIPKWZL%tEp^!sa>?6;Qno-B3zr1>1v3Z$K|nwP2sE4rf%}pIPksTVUwXPYhD02G
+zd*(V{lY@XmV91-j3GcglWVL_&w@+)~;PzHJw~qhV&h_S&T~3}pYw!L1^kjlFpCy=h
+zKPRM7zqR0#;^tL#mpNMv{ARQiS8%>&QQh-+dW`z_ork^FP2QR}-+JB=3o&)qg1AZN
+zIlU&zxN}+5X)gLa#iD(xlC{sg$DWJMc?*@xc(#3>V&He_(P~8*)xd{yUfZobF+tB-
+z)<|f{=d!d0mX}*3Uvmpg?|XglN*l}4!<&rfoXPR<Fq-|=uYL_Phu5;O{IAQ{8WyBv
+y^}dt2Q4myV+LWN78OAa}`KY(b-&J4M+cNa3D6?4S?K}YVG=rzBpUXO@geCwmqt#IW
+
+diff --git a/android/app/src/main/res/mipmap-mdpi/ic_launcher.png b/android/app/src/main/res/mipmap-mdpi/ic_launcher.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..17987b79bb8a35cc66c3c1fd44f5a5526c1b78be
+GIT binary patch
+literal 442
+zc%17D@N?(olHy`uVBq!ia0vp^1|ZDA3?vioaBc-sk|nMYCBgY=CFO}lsSJ)O`AMk?
+zp1FzXsX?iUDV2pMQ*D5Xx&nMcT!A!W`0S9QKQy;}1Cl^CgaH?UAfPyVct3=};#>rj
+z3OoW5XRyg;bSh=^?PB!nW(=9i7&479bUI_$OvbQTjNw2un_1VJ*)WjRDUa2+fi1XG
+zu5*`s?*YZBr<G=1QkruWXpZ4ds8NCb{j5OOh?WHT1v3Z;C@2^h81&DdzkdJu^XK1#
+zK>ntFVW5Jgo-U3d9>?EaIVsd+AmDnjgZbQ|rlv(}mH0aT|F7ojyqm)_x0O4%^7NIR
+zS9fzHe*g2qZ+68w>-T^1Ys)>PE57cFujH(~%h<PG%*LPfdOg?6>g}7Zop$=U=)j}h
+z^`b8}UZ_-zdJ?+ud(o-=+{*uTp7GqD6IdW?E-}B1z5BGG>`am8Iyajf3$2c<=KauJ
+yvp-@T;|<q+-H${X;(de<Z0ssy2otH_#D05X*sUWmCzk^q%;4$j=d#Wzp$P!uPrJzg
+
+diff --git a/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png b/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..09d4391482be68e9e4a07fab769b5de337d16eb1
+GIT binary patch
+literal 721
+zc%17D@N?(olHy`uVBq!ia0vp^2_VeD3?#3*wSy!iOI#yLg7ec#$`gxH85~pclTsBt
+za}(23gHjVyDhp4h+5i=O3-AeX1=1l$e`s#|#^}+&7(N@w0CIr{$Oe+Uk^K-ZP~83C
+zcc@hG6rikF&NPT(23>y!y&wkt5C($~2D>~)O*cj@FGjOCM)M>_ixfudOh)?xMu#Fs
+z#}Y=@YDTwOM)x{K_j*Q;dPdJ?Mz0n|pLRx{4n|)f>SXlmV)XB04CrSJn#dS5nK5`W
+z$gYs7jG@yR!)7ps&14Ll#TX7mvzd$|n5<Hn?DLqM%b47&nLX>6y&9Rlo5V8u#j~eK
+z6wQ;YST0q&PO5RUbn`ap)*aGqyJWi#03GbIALNU|4Qm$weJ)lK<QL2!pkM$50SO5O
+z1r77(&p-bj1a`Be3NkP-`g^)KhGg7(d-J;AVF!WMhYlJGzh_nDGx{VoJzknDl=a|m
+zJlkoPY1i*{rew2mT0F1%T0iTxuE>V_yY|iWFJgYNxZmy<GV%ZZFXzKgep&uX{<8by
+zy8XA`vuyZc&EZoUl<-=ZDfzy}hHtz~#rCQhe*@d<oG$!QUd!LMPfg{QuGfhx{hTZ9
+z6jR=~H!aK;G5UVHX=A=X(HG~&7t32>{yHf9=2T3NpMUQ<%fvb#fmiNL5&LyHzBxN?
+zk>}9)`z}+cLO$hZ*Ndes+u4_^XzsZeZlkKP=g!=n^Ck(;%YPeX%dn(n`E23mN-QZY
+z&%QRkt%+AqGFi9n6yt+yQ+qyC?A%wK60Y13{b72TSvjA-wyD1+=fUmI!pygw4h=tg
+zOykG3H-~Qh+v(Ng`(f?RqsgfflMS}+d9L}nqU90G)#pN0YN9M00(CwIZhT`+Y-cOm
+TJ-3|?82AjHu6{1-oD!M<cl<5t
+
+diff --git a/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png b/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..d5f1c8d34e7a88e3f88bea192c3a370d44689c3c
+GIT binary patch
+literal 1031
+zc%17D@N?(olHy`uVBq!ia0vp^6F``Q8Ax83A=Cw=BuiW)N`mv#O3D+9QW+dm@{>{(
+zJaZG%Q-e|yQz{EjrrIztFa`(sgt!6~Yi|1%a`XoT0ojZ}lNrNjb9xj&#3c(B0U1_%
+zz603|8tx3*z6?7440=Hf`oRqPAq)m#48}1G))@@;`HY6)jHdC7W(kbuNsLzMjMkZq
+zHrb3eIgGYIl*?$B$7o;3=vd6?Si<O3%II9d=u*Y#TFvNI!{}Da=vK$*UdQOs!06G)
+z=m|tkjGoPmo-K@C&5T|xj6Us*J{^p{K-9_T*UjkH!{`r0y^H~UjDh`(ffE=5Co%?3
+zVhozd7&Hmw{$L=Q!Wc4@F=QHJ=yb-=8H`~-G?OuG7GpRN&1N?X=CF?9bWG-S%jWVb
+z;_|ED4y@%4Y2*%T;SO)-j_l-)>f(;-;fd~1S#VQj;Z4;=cT|_$Q(gK%ZTUmB6_3?c
+zK2clwRBhEWwbelMTpfg707J<V97?l~PA~-qD}PClUoeA!fI~vVd=S`w{`~oM6EDAF
+zU|`bsba4!+xb^lzdT?-{Nb5rlE{-q}SEtPZJW^AHoLX934jk~c-q>J!BSYxN|M?z<
+zlUj=3-!+c;X2<vX@4mEok#_P<Y}X1s)-uagJZNMmiuh-I{-{`y&Aiu7eyUbHu&m~n
+zJ@Q1c`-Y8+;No_bq^|-lXXL^KcOQ3Ec~B_QSs~-%Bo{q##&NeLpJR3$dvvjD%e>V`
+znZ^3uQXXpxxi0@YN8n~v#-hvBvt0P(x=wKWH=nrpSnt!ZVD+MpJ39A#`XjuvYL4r@
+z%70xPa_SSO&+F=VvQfP9wPt6Bob|-(a=B6caVjq_cBa^>yIz`?HgV7Lz?7!taVc%j
+zBT~ASs~H^+7M=M-vpd3O-)R^B!u^+zUlyJ9{QUNS)t-y?uD^WxrCG5{b^NmUrNyTt
+zF1~wy(nV|e6wO6*{m+Z9%{eD=@!Ro)64PMTnF_al2~_M%O5Jpm%Ombfb+V3(f7DAU
+zkEk!%wH6|=tJqI=)$OYnnbWOn-k{=YfA4GmS(ha5lUqxkNvNp*`giSrg^ft3+A4*@
+zi_d2NW?t-{u5|Io>(JHz6cqy%>o=EYl+<LEEoAXZ4RvN(<n-^@+<olIjVEvZJQ5}B
+z?iBLr&Z~FQGJHNqgS^ByuXywF)i?VZ!SJ$;U0U;Q+a^90S-j%SPV+>~={H<j|J+sg
+zbnWoI@-Ihq@f6QRVT;=RuPjq&;!x@U5{o{oI6YsfJnsu{!p!~Go&!@AgQu&X%Q~lo
+FCIBHis+j-)
+
+diff --git a/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png b/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..4d6372eebdb28e45604e46eeda8dd24651419bc0
+GIT binary patch
+literal 1443
+zc$}@1{WsKk6vsdJTdFg%tJav9_E4vzrOaqkWF|A724Nly!y+?N9`Y<EGuRAcJfvb&
+zE7a!c9CbqSP?9ENJGEO%+hP?zkloFeFh~ipU+PcTdtRUSy`OvUFQ0qQ=LDDSsz)#;
+zAcXYX-JHE~uUS6pR^b|oUEG5^BZ-T@gdZ0sk%|*SkwZw_p-@xz7;$*0cc?fd`RKz?
+zIzrIT_4IMUn|<!j;((JBc!eM+1-}dCH{atK!^7u4m+&iiWP?Wz_@2kBhS5cMW@pQC
+z4>ET{JK1O_2U&6vg@-8Kh{{J)A7mv!yKwx_?f|qW80{4y8xf*KAbK>IIf9uJSh&M3
+zKd=r2>maZ`2z!LER|K|)!8Qc;g@Ii-*c|~{1kfX4e>Cim0ehTSu#W=<PCPIZz#$PF
+zB;a@q9FxE~8JttV1t%3)KZ0u-xXQsT9o#a&T><WyZ~#XM2eQCJ2_9Krp5uv=3!W#y
+zD;K<Q%>y>hNnoD>4$f)d<^#6?xGLZk08h0%A8(v9z{fcY{Bywn34G3h53WVvTeLhM
+z-(v7B0YNbcN>+xsJWq_m!FCBS>p;v#gxQ5)^dp#k6vm9j9FAg+iI~$d%sB~jkzuT4
+zjFp19rWhV6FpN-<Vv0!d7d9o986{O2C0{m5y=r{C&RBlkIK7dqXeMXgBr99US+~ep
+zt>o<6o3q<YPHH~y#q*bytwHHJe7i)6H=B?2O|4dp$$UCE@x{hYNb3+<W$*6n;3MlF
+z>sibHhG&p1c4pR=AENp<*jyLiOV`)uWme{@R%aAn5f|3>QIg)OSqt@HPpnoqzEFSY
+zihgymWMUptFG-V<bO~1LJ4X-fSbS4gX^=MiGRNfql8AZT@Q7=wY~g%G)8&q@84KFP
+z$*94~;XXC%*LrEe8R5uQ%l0|1$h6*?cMFkH^EqEi_q)!)>Nn@r>^`crtWn5f4ot+B
+zk4yQ#f1uGWF6=hUFVxbAwsWLyOQ#C8Bb4~b?KcQ??TAJE%&38ExP_|H){ta>x9m_&
+z)fmcNJ*BAL)evR>mIauO`I&2b7_H0>s&J@*(Zqa64IFBfS2CYb{Zwn0WEqXZYE$Z>
+zBqMuJZOTcjVRlXkR5tRf%%>AUD%bYz&7ash^o3U4TeFEo?c@L{erkZIoeC$#Pjf7X
+zM#_RT&&qz#bTfFGUPiE{uZ%MEwuO*8tNUu(%==U`z4meP>`X%Jh7m;>wSWFm-bX|K
+zMTe$4%BYTlkumk8Qa?!dE`xSqYH%YS?2pmCA6F_sor-!+KxSXgV+p#apcVw)u3~K^
+zYMO?obK7ee_Vf*!+M({M>iiuI9gmSf$He5%wTi-GamX4gi&?Fvub-IzVEDoHeT&3I
+z3z>ZB%2E(#qPG^A=}e4&8*O`R%X8AhuS7iU`|)7mbV--Uc4M2^b1pC0;7)7PsGE~V
+zdDC{fh{U`*G&43f|HhcJ#;)z&Dqb5J)~Vkc_u}AaRP?^%4YVE;b<tu0p`%(P={^(F
+zn^T*f-&tWl%81N+`^<7vT|je!>ywv%Z7&_@3Ivwp^ZZDMNA0qiuG0S7YvdND-)~FE
+z56k#RC}_Plr)fx$`}G*GtNgWt?ROH!E`54Zp^PW170vSdSM_3?9K(7De=N>;ZP-E!
+z&?%Ci<^*%<M9q<}A9z%AH~*~o7)YMi3uRO&UQahKC<%FwR<u)RTCvff9O-<=1Ohi5
+f`x2I5>#J_arz?Nc_isn|PeRDuh3$OJQKa|}9I$fT
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..dc9ada4725e9b0ddb1deab583e5b5102493aa332
+GIT binary patch
+literal 10932
+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
+a&h7g@zCnA6_LsQFmEW&fk!0=hkADHYSl@O4
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..7353c41ecf9ca08017312dc233d9830079b50717
+GIT binary patch
+literal 295
+zc$@(z0oeYDP)<h;3K|Lk000e1NJLTq000yK000yS0{{R3x>xN#0001NP)t-s|Ns9~
+z#rXRE|M&d=0au&!`~QyF`q}dRnBDt}*!qXo`c{v<liT|#w)Vf&=I{Fc;Pw9Z`ux7>
+z{Djr|@Adh0(D_%#_&mM$D6{kE_x{oE{l@J5@%H*?%=t~i_`ufYOPkAEn!pfkr2$fs
+z652Tz0001XNkl<Z7}K4Q$qs`s3<WVUZPSpj?>qeeKN4RM4i{jKqmiC$?+xN>3Apn^
+z0QfuZLym_5b<*QdmkHjHlj811{If)dl(Z2K0A+ekGtrFJb?g|wt#k#pV-#A~bK=OT
+ts8>{%cPtyC${m|1#B1A6#u!Q;umknL1chzTM$P~L002ovPDHLkV1lTfnu!1a
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..797d452e458972bab9d994556c8305db4c827017
+GIT binary patch
+literal 406
+zc$@*20crk;P)<h;3K|Lk000e1NJLTq001Ze001Zm0{{R3yC6tk0001rP)t-s|Ns9~
+z#rOeNn<=*T@cRC4&iUu}{?YIKbkO<t{r_Rg`SSb!?D_s{&H1p);C<8j-t_+S`~U6q
+z`B238{Qm!3$oMh2_TcODCa>)>cdjpWt&rLJgVp-t?DREyuq1A%0Z4)6_WsQ7{nzjN
+zo!<LHzxPSJ@i4UU+UD@q<nIk_s|j3`3t5Q^SB6%oxX}Or0LMv0K~y-)?T|?lf-n>X
+zGXV)2i3kcZIL~_j>uIKPK_zib+3T+Nt3Mb&Br)s)UIaA}@p{wDda>7=Q|mGRp7pqY
+zkJ!7E{MNz$9nOwoVqpFb)}$IP24Wn2JJ=Cw(!`OXJBr45rP>>AQr$6c7slJWvbpNW
+z@KTwna6d?PP>hvXCcp=4F;=GR@R4E7<pBH$sJ!Z4uL5R#lHLQMbsjPyu3lS&P#-eI
+z`6<26X6SmpL7JKc%xiDVU{Pl_!$sZ9a08>{4VU^0p4F>v^#A|>07*qoM6N<$f*5nx
+ACIA2c
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..6ed2d933e1120817fe9182483a228007b18ab6ae
+GIT binary patch
+literal 450
+zc$@*k0X_bSP)<h;3K|Lk000e1NJLTq002Ay002A)0{{R34I(K(0001lP)t-s|Ns9~
+z#rP?<_5oL$SH}2R$N25}{-ogh<M#fP+xy+~{#%p3>iGWQ_5NJQ_~rNh*z)}eT%KUb
+z`7gNk0#AwF^#0T0?hIa^`~Ck;!}#m+_uT050aTR(J!bU#|IzRL%<lbB#Q5Uu^d+k2
+z=<oI?ukI$R=x3Y5T$8^FSCIxweE~vt7!iLQ0002_Nkl<ZNXPBd*$#p*5J1sd7O_$`
+zL2y9@cm4nWvj#$kn3N2CAVlsX$w}KOB~w%1>^UsMS#KsYnTF*!YeDOytlP4VhV?b}
+z%rz_<=#CPc)tU1MZTq~*2=8~iZ!lSa<{9b@2Jl;?IEV8)=fG217*|@)CCYgFze-x?
+zIFODUIA>nWKpE+bn~n7;-89sa>#DR>TSlqWk*!2hSN6D~Qb#VqbP~4Fk&m`@1$JGr
+zXPIdeRE&b2Thd#{MtDK$px*d3-Wx``>!oimf%|A-&-q*6KAH)e$3|6JV%HX{Hig)k
+suLT-RhftRq8b9;(V=235Wa|I=027H2wCDra;{X5v07*qoM6N<$f;9x^2LJ#7
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..4cd7b0099ca80c806f8fe495613e8d6c69460d76
+GIT binary patch
+literal 282
+zc$@(m0p<RQP)<h;3K|Lk000e1NJLTq0012T0012b0{{R3VNI7k00018P)t-s|Ns9~
+z#rP?<_5oL$`~LrB%lY{I|Jw8ZvE}@&<NRF6_#kYjrQ!RX-urIO`M2l%l-v6OR+-lE
+z{q_0#LcjMxzV|k|_lCRKdZ){Ir^+0L!WDhE7ImlrRF(lrfr8uVB>(^bcu7P-R4C8Q
+z&e;xxFbF_Vrezo%_kH*OKhshZ6BFpG-Y1e10`QXJKbND7AMQ&cMj<Rt#L#B&<}(k`
+z&v(Q6!rV_O+)5cqL@s8;Rzfa9z}^^#8AwrQTna*FxEVpNbhuQB&g))Tm50r`l1Aal
+gdM1U(lMx>60B5TNObaZxYybcN07*qoM6N<$g3m;S%K!iX
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..fe730945a01f64a61e2235dbe3f45b08f7729182
+GIT binary patch
+literal 462
+zc$@*w0WtoGP)<h;3K|Lk000e1NJLTq0024w0024&0{{R3)@8aH0001%P)t-s|Ns9~
+z#rOeNn<=*Tp5FVy>-}iV`2<;=$?g5M=KQbZ{F&YRNy7Nn@%_*5{gvDM0aKI4?ESmw
+z{NnZg)A0R`+4?NF_RZexyVB&^^ZvN!{I28tr{Vje;QNTz`dG&Jz0~Ek&f<Ki%5tK}
+z7<#M$PKy9Rbn5v2y6F7V;_h?9>2;*Z7>B|cg}xYpxEFY+0YrKLF;^Q+-HreN0P{&i
+zK~zY`?b7ECf-n?@;d<&orQ*Q7KoR%4|C>{W^h6@&01>0SKS`dn{Q}GT%Qj_{PLZ_&
+zs`MFI#j-(>?bvdZ!8^xTwlY{qA)T4QLbY@j(!YJ7aXJervHy6HaG_2SB`6CC{He}f
+zHVw(fJWApwPq!6VY7r1w-Fs)@ox~N<e>+q|w~e;JI~C4Vf^@d>Wvj=fl`^u9x9wd9
+zR%3*Q+)t%S!MU_`id^@&Y{y7-r98lZX0?YrHlfmwb?#}^1b{8g&KzmkE(L>Z&)179
+zp<)v6Y}pR<EODy^$f#TG0Y$V+eC{BDH50toV0pja4PB58a@&T&ng9R*07*qoM6N<$
+Ef{9-9n*aa+
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..321773cd857a8a0f0c9c7d3dc3f5ff4fb298dc10
+GIT binary patch
+literal 704
+zc$@*i0zdtUP)<h;3K|Lk000e1NJLTq003720037A0{{R3Miwbv0002DP)t-s|Ns9~
+z#rP?<_5oL$`~Ls={r^|S_*KRDf7JSX)B5oG{`C0!9BHKkS)BI#|MUC*n%(<~*ZTeb
+z|GVh?ujKrB()j^anupf<QpEU_+WP@eji}=Lgx30GnZmQ?{7s6v0aKNr-}{c)`Z&Ay
+zF1Yp=d8+|Sg#kcvxaa&jy!U#i%XOs58Hd7OmB8}){x`e#aiYgnkGvRyx&c*~05e+j
+z`~TbX{-WUfio)L<X{G{5egHIG0Web~wJ>l100G2FL_t(o!|l{-Q-VMg#&MKg7c{O0
+z2wJImOS3Gy*Z2Qifdv~JYOp;v+U)a|nLoc7hNH;I$;lzDt$}rkaFw1mYK5_0Q(Sut
+zvbEloxON7$+HSOgC9Z8ltuC&0OSF!-mXv5caV>#bc3@hBPX@I$58-z}(ZZE!t-aOG
+zpjNkbau@>yEzH(5Yj4kZiMH32XI!4~gVXNnjAvRx;Sdg^`>2DpUEwoMhTs_st8pKG
+z(%SHyHdU&v%f36~uERh!bd`!T2dw;z6PrOTQ7Vt*#9F2uHlUVnb#ev_o^fh}Dzmq}
+zWtlk35}k=?xj28uO|5>>$yXadTUE@@IPpgH`gJ~Ro4>jd1IF|(+IX>8M4Ps{PNvmI
+zNj4D+XgN83gPt_Gm}`Ybv{;+&yu-C(Grdiahmo~BjG-l&mWM+{e5M1sm&=xduwgM9
+z`8OEh`=F3r`^E{n_;%9weN{cf2%7=VzC@cYj+lg>+3|D|_1C@{hcU(DyQG_BvBWe?
+zvTv``=%b1zrol#=R`JB<Q`F~GOz}zuLlL*;1}|cY-IeioVw78<ETDLaB8FiD=WNcO
+mkBVDRjE_g)6gfG$f4O%7iYO|SoHw-q0000<MNUMnLSTYxO==DR
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..797d452e458972bab9d994556c8305db4c827017
+GIT binary patch
+literal 406
+zc$@*20crk;P)<h;3K|Lk000e1NJLTq001Ze001Zm0{{R3yC6tk0001rP)t-s|Ns9~
+z#rOeNn<=*T@cRC4&iUu}{?YIKbkO<t{r_Rg`SSb!?D_s{&H1p);C<8j-t_+S`~U6q
+z`B238{Qm!3$oMh2_TcODCa>)>cdjpWt&rLJgVp-t?DREyuq1A%0Z4)6_WsQ7{nzjN
+zo!<LHzxPSJ@i4UU+UD@q<nIk_s|j3`3t5Q^SB6%oxX}Or0LMv0K~y-)?T|?lf-n>X
+zGXV)2i3kcZIL~_j>uIKPK_zib+3T+Nt3Mb&Br)s)UIaA}@p{wDda>7=Q|mGRp7pqY
+zkJ!7E{MNz$9nOwoVqpFb)}$IP24Wn2JJ=Cw(!`OXJBr45rP>>AQr$6c7slJWvbpNW
+z@KTwna6d?PP>hvXCcp=4F;=GR@R4E7<pBH$sJ!Z4uL5R#lHLQMbsjPyu3lS&P#-eI
+z`6<26X6SmpL7JKc%xiDVU{Pl_!$sZ9a08>{4VU^0p4F>v^#A|>07*qoM6N<$f*5nx
+ACIA2c
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..502f463a9bc882b461c96aadf492d1729e49e725
+GIT binary patch
+literal 586
+zc$@)B0=4~#P)<h;3K|Lk000e1NJLTq002+`002-30{{R3xz7Th0001}P)t-s|Ns9~
+z#rP?<_5oL${r>+}#`wDE{8-2Mebf5<{{PqV{TgVcv*r8?UZ3{-|G?_}T*&y;@cqf{
+z{Q*~+qr%%p!1pS*_Uicl#q9lc(D`!D`LN62sNwq{oYw(Wmhk)k<@f$!$@ng~_5)Ru
+z0Z)trIA5^j{DIW^c+vT2%lW+2<(RtE2wR;4O@)Tm`Xr*?A(qYoM}7i5Yxw>D(&6ou
+zxz!_Xr~yNF+waPe00049Nkl<ZSi|j>*;a!v6h%{rlvIH#gW3s8p;bFr=l}mRqpW2h
+zw=OA%hdyL~z+UHOzl0eKhEr$YYOL-c-%Y<)=j?(bzDweB7{b+%_ypvm_cG{SvM=DK
+zhv{K@m>#Bw>2W$eUI#iU)Wdgs8Y3U+A$Gd&{+j)d)BmGKx+43U_!tik_YlN)>$7G!
+zhkE!s;%oku3;IwG3U^2kw?z+HM)jB{@zFhK8P#KMSytSthr+4!c(5c%+^UBn`0X*2
+zy3(k600_CSZj?O$Qu%&$;|TGUJrptR(HzyIx>5E(2r{eA(<6t3e3I0B)7d6s7?Z5J
+zZ!rtKvA{MiEBm&KFtoifx>5P^Z=vl)95XJn()aS5%ad(s?4-=Tkis9IG<HyCS`?qT
+z)Ro|6_Qh7NQ@~}`rA+~si8eJKUPi2KvJt(SYy``QNE6~^-tErIoNIi%F$_*%27{p$
+YU*-TH>u{`Fy8r+H07*qoM6N<$f<k9BS^xk5
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0ec303439225b78712f49115768196d8d76f6790
+GIT binary patch
+literal 862
+zc$@)V1EKthP)<h;3K|Lk000e1NJLTq004LZ004Lh0{{R34!XwR0002zP)t-s|Ns9~
+z#rObMn<=*T{Qmz~#`ydF|4G63{{H_)!1q<f`1$?*a?kkyRhf|4`b@(223wu=`~FbG
+z_%68j(ctU=Ns=bC^iqtv`~3aV@cotB`eMoW_Wb_z`u;7!|0=fj9I^Fp&iOXF_5o9s
+z8nN{@danRWl$6@~chULM@BMes`C`iW7K6P3OosqIa2R>20Z)wqMt%V?S?~D#06};F
+zA3KcL`Wb+>5ObvgQIG&ig8(;V04hz?@cqy3{mSh8o!|U|)cI!1_+!fWH@o*8vh^CU
+z^ws0;(c$gI+2~q^tO#GDHf@=;DncUw00J^eL_t(&-tE|HQ`%4vfZ;WsBqu-$0nu1R
+zq^Vj;p$clf^?twn|KHO+IGt^q#a3X?w9dXC@*yxhv&l}F322(8Y1&=P&I}~G@#h6;
+z1CV9ecD9ZEe87{{NtI*)_aJ<`<r)mO2JY~qH<i}}3%K`^CfiEV%iQNK88@tOg>kJa
+z?5=RBtFF50s;jQLFil-`)m2wrb=6h(&brpj%nG_U&ut~$?8Rokzxi8zJoWr#2dto5
+zOX_URcc<1`Iky+jc;A%Vzx}1QU{2$|cKPom2Vf1{8m`vja4{F>HS?^Nc^rp}xo+Nh
+z<Ot=3TnjL#{3s56++SYyJuk^V_KKHTH-gSG_ln;ze%`ptyY$>xd}eOm`fm3@MQC1<
+zIk&aCj<SqPSNj*&T)V4Xl1qEFEV*8u7jv?}yd;}iuRJfwLaw8-PHA3}1zeIDmt-jy
+zvzB#9ro9rV<dV$)FD&(DPu;TY*(F)noh0wk<>b~Yh%5+Yq0`)D;q{#-Uqlv*o+Oor
+zE!I71Z@ASH3grl8&P^L0Wpa<xz^6=Zk)~<jNhbH%=&&dd_9T;gIXs`jK4o;Dj*o`d
+z6Z@3Wy&55W?qH8Hx+j;T<BP+>vHoP|UX4e?!igT`4?AZk$hu*@%6WJ;zDOGlw7kj@
+z<lpwc2DnuIWwY0&c|FQG<a_&#RArSZ0Xg^wWdl+<xk%Z9_C`)GB_!mvPit%+KTpKq
+oKffp!%tkY_plO<>Y5!B-0ft0f?Lgb>C;$Ke07*qoM6N<$f~t1N9smFU
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0ec303439225b78712f49115768196d8d76f6790
+GIT binary patch
+literal 862
+zc$@)V1EKthP)<h;3K|Lk000e1NJLTq004LZ004Lh0{{R34!XwR0002zP)t-s|Ns9~
+z#rObMn<=*T{Qmz~#`ydF|4G63{{H_)!1q<f`1$?*a?kkyRhf|4`b@(223wu=`~FbG
+z_%68j(ctU=Ns=bC^iqtv`~3aV@cotB`eMoW_Wb_z`u;7!|0=fj9I^Fp&iOXF_5o9s
+z8nN{@danRWl$6@~chULM@BMes`C`iW7K6P3OosqIa2R>20Z)wqMt%V?S?~D#06};F
+zA3KcL`Wb+>5ObvgQIG&ig8(;V04hz?@cqy3{mSh8o!|U|)cI!1_+!fWH@o*8vh^CU
+z^ws0;(c$gI+2~q^tO#GDHf@=;DncUw00J^eL_t(&-tE|HQ`%4vfZ;WsBqu-$0nu1R
+zq^Vj;p$clf^?twn|KHO+IGt^q#a3X?w9dXC@*yxhv&l}F322(8Y1&=P&I}~G@#h6;
+z1CV9ecD9ZEe87{{NtI*)_aJ<`<r)mO2JY~qH<i}}3%K`^CfiEV%iQNK88@tOg>kJa
+z?5=RBtFF50s;jQLFil-`)m2wrb=6h(&brpj%nG_U&ut~$?8Rokzxi8zJoWr#2dto5
+zOX_URcc<1`Iky+jc;A%Vzx}1QU{2$|cKPom2Vf1{8m`vja4{F>HS?^Nc^rp}xo+Nh
+z<Ot=3TnjL#{3s56++SYyJuk^V_KKHTH-gSG_ln;ze%`ptyY$>xd}eOm`fm3@MQC1<
+zIk&aCj<SqPSNj*&T)V4Xl1qEFEV*8u7jv?}yd;}iuRJfwLaw8-PHA3}1zeIDmt-jy
+zvzB#9ro9rV<dV$)FD&(DPu;TY*(F)noh0wk<>b~Yh%5+Yq0`)D;q{#-Uqlv*o+Oor
+zE!I71Z@ASH3grl8&P^L0Wpa<xz^6=Zk)~<jNhbH%=&&dd_9T;gIXs`jK4o;Dj*o`d
+z6Z@3Wy&55W?qH8Hx+j;T<BP+>vHoP|UX4e?!igT`4?AZk$hu*@%6WJ;zDOGlw7kj@
+z<lpwc2DnuIWwY0&c|FQG<a_&#RArSZ0Xg^wWdl+<xk%Z9_C`)GB_!mvPit%+KTpKq
+oKffp!%tkY_plO<>Y5!B-0ft0f?Lgb>C;$Ke07*qoM6N<$f~t1N9smFU
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e9f5fea27c705180eb716271f41b582e76dcbd90
+GIT binary patch
+literal 1674
+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
+Ux%ZwassI2007*qoM6N<$f}6Z;X#fBK
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..84ac32ae7d989f82d5e46a60405adcc8279e8001
+GIT binary patch
+literal 762
+zc$@+H0tNkvP)<h;3K|Lk000e1NJLTq002w?002w~0{{R3@JXQ=0002qP)t-s|Ns9~
+z#rXXG|5(QODYo_jSDX9&{(;o_`ThU+`~6SD_+iQT==c3r#`s3S_Xb*>OTza`!S_YK
+z_v-lm^7{VO^8Q@M_^8F)09Ki6%=s?2_5e<mRK)jOlD-01od8IZ-1Gexu=M~@mHz(!
+z(eM2^yY?%;|8~&%Fu3+1v-Tvk^(eCP%G~M!P>upee(w1FB%aqSweusQ-T+CH0Xt{`
+zFjMvW{@C&TB)k25()nh~_yJ9c<MsW_?fl2<{Nd~J)#L6sujeJC;K<b8pugFfyVhQm
+zzhIHOPKmexK#VF>oBRL(0oO@HK~z}7?bm5j;y@69;bvlHb2tf!$ReA~x{22wTq550
+z?f?Hnw(;m3ip30;QzdV~7pi!wyMYhDtXW#cO7T>|f=bdFhu+F!zMZ2UFj;GUKX7tI
+z;hv3{q~!*pMj75WP_c}>6)IWvg5_yyg<9Op()eD1hWC19M@?_9_MHec{Z8n3FaF{8
+z;u`Mw0ly(uE>*CgQYv{be6ab2LWhlaH1^iLIM{olnag$78^Fd}%dR7;JECQ+hmk|o
+z!u<uZ-oSPu!itt>2&!3MqPfP5ChDSkFSH8F2WVOEf0(E_M(JL17G}Y+fg0_IuW%WQ
+zG(mG&u<d$HDGTG--N>?|->YSdk0;8rc{yw2@2Z&GA}z{Wb91Ooz9VhA{b2DYE7RmG
+zjL}?eq#iX%3#k;JWMx_{^2nNax`xPhByFiDX+a7uTGU|otOvIAUy|dEKkXOm-`aWS
+z27pUzD{a)Ct<6p{{3)+lq@i`t@%>-wT4r?*S}k)58e09WZYP<FHdyPA5JO8{8|?N+
+zqi)hNvlO*O+|i6<gw!<~F3i}+9jB!I_Y=QmeihA(%{U8hIJ^d63fk~TuH^2PD`=;e
+s-wR!xNH1D_BdsZ;*`*lFn)Mmo0|Ng&v#M4dp#T5?07*qoM6N<$g6nFR7XSbN
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..8953cba09064923c5daf2d37e7c3c836ccdd794b
+GIT binary patch
+literal 1226
+zc$@*s1U37KP)<h;3K|Lk000e1NJLTq005W(005W>0{{R3FC5Sl00039P)t-s|Ns9~
+z#rP?<_5oL$Q^olD{r_0T`27C={r>*`|Nj71npVa5OTzc(_WfbW_({R{p56NV{r*M2
+z_xt?)2V0#0Ns<IwoaFZYD7E$gOO&$Z{I}-(M!@%1kG%Q&{X2ZIEw}bv$M_ep_9e9S
+z0acfN)A=K`_9(RUPs8^>fV0u>{42ctGP(8vQj-Btk1n|O0ZD=YLwd&R{Ko41Gr9H=
+zY@z@@bOAMB5Ltl$E>bJJ{>JP30ZxkmI%?eW{k`b?Wy<&gOo;dS`~CR$Vwb@XWtR|N
+zi~t=w02?-0&j0TD{>bb6sNwsK*!p?V`RMQUl(*DVjk-9Cx+-z1KXab|Ka2oXhX5f%
+z`$|e!000AhNkl<Zc-rlk>rxs)5QTeTVRi&#7Emz~MKK1WAjCw(c-JK6eox;2O)?`?
+zTG`AHia671e^vgmp!llKp|=5sVHk#C7=~epA~VAf-~%aPC=%Qw01h8mnSZ|p?hz91
+z7p83F3%LVu9;S$tSI$C^%^yud1dfTM_6p2|+5Ejp$bd`GD<tQoa;#(tdg*x)^b%Ba
+zB<dx&U)Pai49>vbR|xit>i!ZD&F>@CJrPmu*UjD&?DfZs=$@e3FQA(vNiU+$A*%a}
+z?`XcG2jDxJ_ZQ#Md`H{4Lpf6QBDp81_KWZ6Tk#yCy1)32zO#3<7>b`eT7UyYH1eGz
+z;O(rH$=QR*L%%ZcBpc=eGua?N55nD^K(8<#gl2+pN_j~b2MHs4#mcLmv%DkspS-3<
+zpI1F=^9siI0s-;IN_IrA;5xm~3?3!StX}pUv0vkxMaqm+zxrg7X7(I&*N~&dEd0kD
+z-FRV|g=|QuUsuh>-xCI}vD2imzYIOIdcCVV=$Bz@*u0+Bs<|L^)32nN*=wu3n%Ynw
+z@1|eLG>!8ruU1pFXUfb`j>(=Gy~?Rn4QJ-c3%3T|(Frd!bI`9u&zAnyFYTqlG#&J7
+zAkD(jpw|oZLNiA>;><E14vb!C<}61v(|=|!?3p_+{3UDZS8`^UqXVSX3uorc3rX$?
+zgBj-N6r7jA4EKZs%)L+cEbx+}6e`CWdL?HT)GI#bCEzgCo0rk-&7lV`DdA{&!{YV0
+zy887LPQW<=GWV7@&0eYX=i7@5umH{x5G^fN%Vw|k%=BW>hgp1KX7-wxC~31II47gc
+zHcehD6Uxlf%+M^^uN5Wc*G%^;>D5qT{>=uxUhX%WJu^Z*(_Wq9y}npFO{Hhb>s6<9
+zNi0pHXWFaVZnb)1+RS&F)xOv6&aeILcI)`k#0YE+?e)5&#r7J#c`3Z7x!LpTc01dx
+zrdC3{Z;joZ^KN&))zB_i)I9fWedoN>Zl-6_Iz+^G&*ak2j<V8PXoPq(E5hmbxe_*B
+zL8NCzkZaSWt6DUAR)k2Ir6){c{?c5yFzaVYs%JejB}TAkwwd{RZb~T9PxHo^dE6RA
+z&7_)HtjuOCl;+mJu^Fa0XQT1s+b4*@8EAHL_T{0Cv$f9<fqUW+UgMUy7!LtFAtQ~9
+o<N)eleSl#YhG7_nVQw400riWbnCg0%WB>pF07*qoM6N<$f;w%0(f|Me
+
+diff --git a/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png b/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..0467bf12aa4d28f374bb26596605a46dcbb3e7c8
+GIT binary patch
+literal 1418
+zc$@)>1$Fv~P)<h;3K|Lk000e1NJLTq005@|005^50{{R3L&&_|0002<P)t-s|Ns9~
+z#rP?<_5oL$Q^ffF{{Q^_{`&p@SjPDK{{L6T_)f$3M8Ed{N|OOrnTpr?P{a5HTAk4D
+z`~z5={{R2(`ToW0{7S+1UdZ?uu=R4G$LIF_V#@f2t<FZk_b#~h^7{VK@BE3@`mW>q
+zKfU)WzW*n(@|xWGCA9ScMt*e9`2kdxPQ&<!ug?KelLAhO12k6wP>&>|-UCa7_51w+
+zLUsW@ZzZSW0y$)Hp~e9%PvP|a03ks1`~K?q{u;6NC8*{AOqIUq{CL&;p56Lf$oQGq
+z^={4hPQv)y=I|4n+?>7Fim=dxt<Pzk!)BSn06mMNcYMVF00dG=L_t(|+U?wHQxh>1
+z2H+Dm+1+fh+IF>G0SjJMkQQre1x4|G*Z==(Ot&kCnUrL4I(rf(ucITwmuHf^hXiJT
+zkdTm&kdTm&kdTm&kdP`esgWG0BcWCVkVZ&2dUwN`cgM8QJb`Z7Z~e<&Yj2(}>Tmf`
+zm1{eLgw!b{bXkjWbF%dTkTZEJWyWOb##Lfw4EK2}<0d6%>AGS{po>WCOy&f$Tay_>
+z?NBlkpo@s-O;0V%Y_Xa-G#_O08q5LR*~F%&)}{}r&L%Sbs8AS4t7Y0N<jX*!Zo1T)
+zt|ujDdNPm_Uj|b5at$QXrYAL;&a;w9ef8K&nK>Ex*{soY=0MZExqA5XHQkqi#4gW3
+zqODM^iyZl;dvf)-bOXtOru(s)Uc7~BFx{w-FK;2{`VA?(g&@3z&bfLFyctOH!cVsF
+z7IL=fo-qBndRUm;kAdXR4e6>k-z|21AaN%ubeVrHl*<|s&Ax@W-t?LR(P-24A5=>a
+z*R9#QvjzF8n%@1Nw@?CG@6(%>+-0ASK~jEmCV|&a*7-GKT72W<(TbSjf)&Eme6nGE
+z>Gkj4Sq&2e+-G%|+NM8OOm5zVl9{Z8Dd8A5z3y8mZ=4Bv4%>as_{9cN#bm~;h>62(
+zdqY93Zy}v&c4n($Vv!Uy<K_zKOlD+qWUdUFpAY5dH@%6osjq0CErn{#ykyp^kOXJ|
+zicCq>bR8<y)-%R+rrz||Wzz|mSSH5JR}UOW%{1K(MW)nNGvf_6U5B!ao8CgILf1Aw
+zG8(21)tipYTWdQR!P(SW&lOZ}Ix;uc9`9tF6EXD_)#ql#Ttg@c6QPVRxq2XT0i|SO
+z>ocs7#zbfX1IY-*w~)p}XyZ-SFC~4w>BvMVr`dFbelV{lLL0bx7@*ZZdebr3`sP;?
+zVImji)kG)(6Juv0lz@q`F!k1FE;CQ(D0iG$wchPbKZQELlsZ#~rt8#90Y_Xh&3U-<
+z{s<&cCV_1`^TD^<AY&knfDgB9%(uhhCkR@o0C;q3ZPUygx3AnIhYBN9F~{R}6uAL?
+za|+d%FUCc?y@1B}&Zmf!YDG=VT?Oq`P|6@wXBNfooEf<coiiu<`=wJs9XO-1ER)Wh
+zOb-qgPDh|3$JQfrIvoy`(<!K^pvZhSn-$|zr!!DljVEM|CTE-_G;*y>ia9!*mQDq&
+zn2{r`j};V|uV%_wsP!zB?m%;FeaRe+X47K0e+KE!8C{gAWF8)lCd1u1%~|M!XNRvw
+zvtqy3iz0WSpWdhn6$hP8PaRBmp)q`#PCA`Vd#Tc$@f1tAcM>f_I@bC)hkI9|o(Iqv
+zo}Piadq!j76}004RBio<`)70k^`K1NK)q>w?p^C6J2ZC!+UppiK6&y3Kmbv&O!oYF
+z34$0Z;QO!JOY#!`qyGH<3Pd}Pt@q*A0V=3SVtWKRR8d8Z&@)3qLPA19LPA19LPEUC
+YUoZo%k(ykuW&i*H07*qoM6N<$f+CH{y8r+H
+
+diff --git a/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png b/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..9da19eacad3b03bb08bbddbbf4ac48dd78b3d838
+GIT binary patch
+literal 68
+zc%17D@N?(olHy`uVBq!ia0vp^j3CUx0wlM}@Gt=>Zci7-kcv6Uzs@r-FtIZ-&5|)J
+Q1PU{Fy85}Sb4q9e0B4a5jsO4v
+
+diff --git a/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png b/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..9da19eacad3b03bb08bbddbbf4ac48dd78b3d838
+GIT binary patch
+literal 68
+zc%17D@N?(olHy`uVBq!ia0vp^j3CUx0wlM}@Gt=>Zci7-kcv6Uzs@r-FtIZ-&5|)J
+Q1PU{Fy85}Sb4q9e0B4a5jsO4v
+
+diff --git a/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png b/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..9da19eacad3b03bb08bbddbbf4ac48dd78b3d838
+GIT binary patch
+literal 68
+zc%17D@N?(olHy`uVBq!ia0vp^j3CUx0wlM}@Gt=>Zci7-kcv6Uzs@r-FtIZ-&5|)J
+Q1PU{Fy85}Sb4q9e0B4a5jsO4v
+
