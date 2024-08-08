@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pagina_secundaria.dart';
+
 class Cad extends StatefulWidget {
   const Cad({super.key});
 
@@ -30,15 +32,28 @@ class _CadState extends State<Cad> {
       //   },
       //   child: Text('Enviar'),
       // ),
+
       body: Expanded(
         child: Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 50),
-              const Image(
-                image: AssetImage('assets/images/US.png'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('Login',
+                      style: DefaultTextStyle.of(context)
+                          .style
+                          .apply(fontSizeFactor: 1.0)),
+                ],
               ),
+              SizedBox(height: 50),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                const Image(
+                  image: AssetImage('assets/images/tdah.png'),
+                  width: 200,
+                ),
+              ]),
               SizedBox(height: 50),
               TextFormField(
                 decoration: const InputDecoration(
@@ -82,20 +97,20 @@ class _CadState extends State<Cad> {
                   child: const Text('Submit'),
                 ),
               ),
-              // ElevatedButton(
-              //   style: const ButtonStyle(
-              //       backgroundColor:
-              //           MaterialStatePropertyAll<Color>(Colors.black38)),
-              //   child: const Text('Pagina Secundária',
-              //       style: TextStyle(color: Colors.white)),
-              //   onPressed: () {
-              //     Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) => Pagina_Secundaria()),
-              //     );
-              //   },
-              // ),
+              ElevatedButton(
+                style: const ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll<Color>(Colors.black38)),
+                child: const Text('Pagina Secundária',
+                    style: TextStyle(color: Colors.white)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Pagina_Secundaria()),
+                  );
+                },
+              ),
             ],
           ),
         ),
