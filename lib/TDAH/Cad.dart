@@ -18,7 +18,8 @@ class _CadState extends State<Cad> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ola'),
+        backgroundColor: Theme.of(context).colorScheme.inverseSurface,
+        title: const Text("Gabriel's App"),
       ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {
@@ -35,83 +36,182 @@ class _CadState extends State<Cad> {
 
       body: Expanded(
         child: Form(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Login',
-                      style: DefaultTextStyle.of(context)
-                          .style
-                          .apply(fontSizeFactor: 1.0)),
-                ],
-              ),
-              SizedBox(height: 50),
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                const Image(
-                  image: AssetImage('assets/images/tdah.png'),
-                  width: 200,
+          child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    stops: [0.1, 0.7],
+                    colors: [Colors.cyanAccent, Colors.blueAccent])),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(width: 30),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: Text(
+                        'LOGIN',
+                        style: TextStyle(
+                          fontSize: 35,
+                          color: Colors.white,
+                          shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 9.0,
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 250),
+                    Image(
+                      image: AssetImage('assets/images/tdah.png'),
+                      width: 200,
+                    ),
+                  ],
                 ),
-              ]),
-              SizedBox(height: 50),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Insira o seu nome',
+                Align(alignment: Alignment.bottomCenter),
+                Stack(children: <Widget>[
+                  const Image(
+                    image: AssetImage('assets/images/US.png'),
+                    width: 150,
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 20,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors.transparent, // Remove a cor de fundo
+                        shadowColor: Colors.transparent, // Remove a sombra
+                        minimumSize:
+                            Size(0, 0), // Define o tamanho mínimo como zero
+                        padding: EdgeInsets.all(0), // Remove o padding
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              0), // Remove o arredondamento (opcional)
+                        ),
+                      ),
+                      child: Image(
+                        image: AssetImage('assets/images/camera.png'),
+                        width: 50,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ]),
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(right: 50, left: 50),
+                  child: TextFormField(
+                    cursorColor: Colors.white,
+                    style: TextStyle(
+                      color: Colors.white,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 7.0,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                    decoration: const InputDecoration(
+                      hintText: 'Email:',
+                      hintStyle: TextStyle(color: Colors.white),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Insira o seu email',
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(right: 50, left: 50),
+                  child: TextFormField(
+                    cursorColor: Colors.white,
+                    style: TextStyle(
+                      color: Colors.white,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 7.0,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                    controller: myController,
+                    decoration: const InputDecoration(
+                      hintText: 'Senha:',
+                      hintStyle: TextStyle(color: Colors.white),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              TextFormField(
-                controller: myController,
-                decoration: const InputDecoration(
-                  hintText: 'Insira o sua senha',
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          Colors.transparent, // Remove a cor de fundo
+                      shadowColor: Colors.transparent, // Remove a sombra
+                      minimumSize:
+                          Size(0, 0), // Define o tamanho mínimo como zero
+                      padding: EdgeInsets.all(0), // Remove o padding
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            0), // Remove o arredondamento (opcional)
+                      ),
+                    ),
+                    onPressed: () {
+                      // Validate will return true if the form is valid, or false if
+                      // the form is invalid.
+                      senha = myController.text;
+                      csenha = myController2.text;
+                      if (senha == csenha) {
+                        print("correto");
+                      } else {
+                        print("errado");
+                      }
+                    },
+                    child: const Text(
+                      'Entrar',
+                      style: TextStyle(
+                        color: Colors.white,
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 9.0,
+                            color: Colors.black,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 15),
-              TextFormField(
-                controller: myController2,
-                decoration: const InputDecoration(
-                  hintText: 'Confirme sua senha',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: ElevatedButton(
+                ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Colors.black38)),
+                  child: const Text('Pagina Secundária',
+                      style: TextStyle(color: Colors.white)),
                   onPressed: () {
-                    // Validate will return true if the form is valid, or false if
-                    // the form is invalid.
-                    senha = myController.text;
-                    csenha = myController2.text;
-                    if (senha == csenha) {
-                      print("correto");
-                    } else {
-                      print("errado");
-                    }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Pagina_Secundaria()),
+                    );
                   },
-                  child: const Text('Submit'),
                 ),
-              ),
-              ElevatedButton(
-                style: const ButtonStyle(
-                    backgroundColor:
-                        MaterialStatePropertyAll<Color>(Colors.black38)),
-                child: const Text('Pagina Secundária',
-                    style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Pagina_Secundaria()),
-                  );
-                },
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
