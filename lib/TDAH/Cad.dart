@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../pagina_secundaria.dart';
+import 'home.dart';
 
 class Cad extends StatefulWidget {
   const Cad({super.key});
@@ -12,15 +12,14 @@ class Cad extends StatefulWidget {
 class _CadState extends State<Cad> {
   final myController = TextEditingController();
   final myController2 = TextEditingController();
+  final myController3 = TextEditingController();
+  var email = "";
   var senha = "";
   var csenha = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inverseSurface,
-        title: const Text("Gabriel's App"),
-      ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {
       //     senha = myController.text;
@@ -118,6 +117,7 @@ class _CadState extends State<Cad> {
                         ),
                       ],
                     ),
+                    controller: myController,
                     decoration: const InputDecoration(
                       hintText: 'Email:',
                       hintStyle: TextStyle(color: Colors.white),
@@ -143,9 +143,35 @@ class _CadState extends State<Cad> {
                         ),
                       ],
                     ),
-                    controller: myController,
+                    controller: myController2,
                     decoration: const InputDecoration(
                       hintText: 'Senha:',
+                      hintStyle: TextStyle(color: Colors.white),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                            width: 1, color: Colors.white), //<-- SEE HERE
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(right: 50, left: 50),
+                  child: TextFormField(
+                    cursorColor: Colors.white,
+                    style: TextStyle(
+                      color: Colors.white,
+                      shadows: <Shadow>[
+                        Shadow(
+                          offset: Offset(1.0, 1.0),
+                          blurRadius: 7.0,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                    controller: myController3,
+                    decoration: const InputDecoration(
+                      hintText: 'Confirme a senha:',
                       hintStyle: TextStyle(color: Colors.white),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(
@@ -173,10 +199,15 @@ class _CadState extends State<Cad> {
                     onPressed: () {
                       // Validate will return true if the form is valid, or false if
                       // the form is invalid.
-                      senha = myController.text;
-                      csenha = myController2.text;
+                      email = myController.text;
+                      senha = myController2.text;
+                      csenha = myController3.text;
                       if (senha == csenha) {
                         print("correto");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Home_TDAH()),
+                        );
                       } else {
                         print("errado");
                       }
@@ -185,6 +216,7 @@ class _CadState extends State<Cad> {
                       'Entrar',
                       style: TextStyle(
                         color: Colors.white,
+                        fontSize: 25,
                         shadows: <Shadow>[
                           Shadow(
                             offset: Offset(1.0, 1.0),
@@ -200,13 +232,15 @@ class _CadState extends State<Cad> {
                   style: const ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll<Color>(Colors.black38)),
-                  child: const Text('Pagina Secundária',
-                      style: TextStyle(color: Colors.white)),
+                  child: const Text('Cadastrar',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => Pagina_Secundaria()),
+                      MaterialPageRoute(builder: (context) => Home_TDAH()),
                     );
                   },
                 ),

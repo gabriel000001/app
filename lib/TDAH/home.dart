@@ -6,20 +6,27 @@ class Home_TDAH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-        title: Center(
-          child: Text('InfoTDAH'),
-        ),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(24.0),
-            child: Image.asset(
-                'https://fernandobeteti.com.br/wp-content/uploads/2024/05/portrait-autistic-kid-fantasy-world-scaled.jpg'),
+      body: Expanded(
+        child: Container(
+          color: Colors.cyan,
+          margin: const EdgeInsets.all(25.0),
+          width: 550,
+          child: Center(
+            child: Column(
+              children: [
+                Text("InfoTDAH"),
+                Container(
+                  margin: const EdgeInsets.all(25.0),
+                  color: Colors.grey,
+                  width: 300,
+                  child: Center(
+                    child: Text("oi"),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ],
+        ),
       ),
     );
   }
