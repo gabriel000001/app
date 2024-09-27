@@ -1,4 +1,6 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'home.dart';
 
@@ -12,100 +14,97 @@ class Cad extends StatefulWidget {
 class _CadState extends State<Cad> {
   final myController = TextEditingController();
   final myController2 = TextEditingController();
-  final myController3 = TextEditingController();
   var email = "";
   var senha = "";
-  var csenha = "";
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     senha = myController.text;
-      //     csenha = myController2.text;
-      //     if (senha == csenha) {
-      //       print("correto");
-      //     } else {
-      //       print("errado");
-      //     }
-      //   },
-      //   child: Text('Enviar'),
-      // ),
-
-      body: Expanded(
-        child: Form(
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                    stops: [0.1, 0.7],
-                    colors: [Colors.cyanAccent, Colors.blueAccent])),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                stops: [0.1, 0.7],
+                colors: [Colors.cyanAccent, Colors.blueAccent])),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(width: 30),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25),
-                      child: Text(
-                        'LOGIN',
-                        style: TextStyle(
-                          fontSize: 35,
-                          color: Colors.white,
-                          shadows: <Shadow>[
-                            Shadow(
-                              offset: Offset(1.0, 1.0),
-                              blurRadius: 9.0,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
+                      padding: const EdgeInsets.only(top: 50),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Login',
+                              style: GoogleFonts.leagueSpartan(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                shadows: <Shadow>[
+                                  Shadow(
+                                    offset: Offset(1.0, 1.0),
+                                    blurRadius: 9.0,
+                                    color: Colors.black,
+                                  ),
+                                ],
+                              )),
+                          SizedBox(width: 65),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(height: 100),
+                              Stack(children: <Widget>[
+                                const Image(
+                                  image: AssetImage('assets/images/US.png'),
+                                  width: 200,
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  right: 20,
+                                  child: Icon(
+                                    Icons
+                                        .lock, // Ícone de cadeado padrão do Flutter
+                                    size: 50,
+                                    color: Color(0xFFD9D9D9), // Cor do ícone
+                                  ),
+                                ),
+                              ]),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(width: 250),
-                    Image(
-                      image: AssetImage('assets/images/tdah.png'),
-                      width: 200,
-                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 35),
+                      child: Row(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/tdah.png'),
+                            width: 200,
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
                 Align(alignment: Alignment.bottomCenter),
-                Stack(children: <Widget>[
-                  const Image(
-                    image: AssetImage('assets/images/US.png'),
-                    width: 150,
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    right: 20,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.transparent, // Remove a cor de fundo
-                        shadowColor: Colors.transparent, // Remove a sombra
-                        minimumSize:
-                            Size(0, 0), // Define o tamanho mínimo como zero
-                        padding: EdgeInsets.all(0), // Remove o padding
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              0), // Remove o arredondamento (opcional)
-                        ),
-                      ),
-                      child: Image(
-                        image: AssetImage('assets/images/camera.png'),
-                        width: 50,
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                ]),
-                SizedBox(height: 15),
+
+                SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.only(right: 50, left: 50),
                   child: TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     cursorColor: Colors.white,
                     style: TextStyle(
                       color: Colors.white,
@@ -126,6 +125,14 @@ class _CadState extends State<Cad> {
                             width: 1, color: Colors.white), //<-- SEE HERE
                       ),
                     ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor insira um email';
+                      } else if (!EmailValidator.validate(value)) {
+                        return 'Insira um email válido';
+                      }
+                      return null;
+                    },
                   ),
                 ),
                 SizedBox(height: 15),
@@ -152,34 +159,40 @@ class _CadState extends State<Cad> {
                             width: 1, color: Colors.white), //<-- SEE HERE
                       ),
                     ),
+                    validator: (String? value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor insira uma senha';
+                      }
+                      return null;
+                    },
                   ),
                 ),
                 SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.only(right: 50, left: 50),
-                  child: TextFormField(
-                    cursorColor: Colors.white,
-                    style: TextStyle(
-                      color: Colors.white,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(1.0, 1.0),
-                          blurRadius: 7.0,
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                    controller: myController3,
-                    decoration: const InputDecoration(
-                      hintText: 'Confirme a senha:',
-                      hintStyle: TextStyle(color: Colors.white),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 1, color: Colors.white), //<-- SEE HERE
-                      ),
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(right: 50, left: 50),
+                //   child: TextFormField(
+                //     cursorColor: Colors.white,
+                //     style: TextStyle(
+                //       color: Colors.white,
+                //       shadows: <Shadow>[
+                //         Shadow(
+                //           offset: Offset(1.0, 1.0),
+                //           blurRadius: 7.0,
+                //           color: Colors.black,
+                //         ),
+                //       ],
+                //     ),
+                //     controller: myController3,
+                //     decoration: const InputDecoration(
+                //       hintText: 'Confirme a senha:',
+                //       hintStyle: TextStyle(color: Colors.white),
+                //       enabledBorder: UnderlineInputBorder(
+                //         borderSide: BorderSide(
+                //             width: 1, color: Colors.white), //<-- SEE HERE
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -199,18 +212,22 @@ class _CadState extends State<Cad> {
                     onPressed: () {
                       // Validate will return true if the form is valid, or false if
                       // the form is invalid.
-                      email = myController.text;
-                      senha = myController2.text;
-                      csenha = myController3.text;
-                      if (senha == csenha) {
-                        print("correto");
+
+                      if (_formKey.currentState!.validate()) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Home_TDAH()),
                         );
                       } else {
-                        print("errado");
+                        print('O formulário é invalido');
                       }
+                      // csenha = myController3.text;
+                      // if (senha == csenha) {
+                      //   print("correto");
+
+                      // } else {
+                      //   print("errado");
+                      // }
                     },
                     child: const Text(
                       'Entrar',

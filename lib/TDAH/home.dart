@@ -6,21 +6,47 @@ class Home_TDAH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'InfoTDAH',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true, // Centraliza o título
+        backgroundColor: Colors.white, // Define o fundo branco
+      ),
       body: Expanded(
         child: Container(
-          color: Colors.cyan,
-          margin: const EdgeInsets.all(25.0),
-          width: 550,
+          decoration: BoxDecoration(color: Color(0xFFF0F0F0)),
           child: Center(
             child: Column(
               children: [
-                Text("InfoTDAH"),
+                Image(
+                  image: AssetImage('assets/images/cerebro.png'),
+                  width: 550,
+                ),
                 Container(
-                  margin: const EdgeInsets.all(25.0),
-                  color: Colors.grey,
-                  width: 300,
-                  child: Center(
-                    child: Text("oi"),
+                  color: Colors.white,
+                  width: 550,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          "Tratamento e manejo",
+                          style: TextStyle(
+                              color: Colors.lightBlueAccent, fontSize: 25),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 15.0),
+                        child: Text(
+                          "03/06/2024",
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
