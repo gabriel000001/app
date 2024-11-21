@@ -1,19 +1,20 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:untitled/TDAH/Login.dart';
+import 'package:untitled/TDAH/Cad.dart';
 
-class Cad extends StatefulWidget {
-  const Cad({super.key});
+import 'home.dart';
+
+class Log extends StatefulWidget {
+  const Log({super.key});
 
   @override
-  State<Cad> createState() => _CadState();
+  State<Log> createState() => _LogState();
 }
 
-class _CadState extends State<Cad> {
+class _LogState extends State<Log> {
   final myController = TextEditingController();
   final myController2 = TextEditingController();
-  final myController0 = TextEditingController();
   var email = "";
   var senha = "";
 
@@ -37,14 +38,16 @@ class _CadState extends State<Cad> {
             child: Column(
               children: <Widget>[
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(width: 20),
+                    SizedBox(width: 30),
                     Padding(
                       padding: const EdgeInsets.only(top: 50),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Cadastro',
+                          Text('Login',
                               style: GoogleFonts.leagueSpartan(
                                 fontSize: 40,
                                 fontWeight: FontWeight.bold,
@@ -57,113 +60,48 @@ class _CadState extends State<Cad> {
                                   ),
                                 ],
                               )),
+                          SizedBox(width: 65),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              SizedBox(height: 50),
+                              SizedBox(height: 100),
                               Stack(children: <Widget>[
                                 const Image(
-                                  image: AssetImage('assets/images/tdah.png'),
-                                  width: 235,
+                                  image: AssetImage('assets/images/US.png'),
+                                  width: 200,
                                 ),
-                                // Positioned(
-                                //   bottom: 0,
-                                //   right: 20,
-                                //   child: Icon(
-                                //     Icons
-                                //         .lock, // Ícone de cadeado padrão do Flutter
-                                //     size: 50,
-                                //     color: Color(0xFFD9D9D9), // Cor do ícone
-                                //   ),
-                                // ),
+                                Positioned(
+                                  bottom: 0,
+                                  right: 20,
+                                  child: Icon(
+                                    Icons
+                                        .lock, // Ícone de cadeado padrão do Flutter
+                                    size: 50,
+                                    color: Color(0xFFD9D9D9), // Cor do ícone
+                                  ),
+                                ),
                               ]),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(top: 35),
-                    //   child: Row(
-                    //     children: [
-                    //       Image(
-                    //         image: AssetImage('assets/images/US.png'),
-                    //         width: 100,
-                    //       ),
-                    //     ],
-                    //   ),
-                    // )
+                    Padding(
+                      padding: const EdgeInsets.only(top: 35),
+                      child: Row(
+                        children: [
+                          Image(
+                            image: AssetImage('assets/images/tdah.png'),
+                            width: 200,
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
                 Align(alignment: Alignment.bottomCenter),
 
                 SizedBox(height: 50),
-                Padding(
-                  padding: const EdgeInsets.only(right: 50, left: 50),
-                  child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: Colors.white,
-                    style: TextStyle(
-                      color: Colors.white,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(1.0, 1.0),
-                          blurRadius: 7.0,
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                    controller: myController0,
-                    decoration: const InputDecoration(
-                      hintText: 'Nome:',
-                      hintStyle: TextStyle(color: Colors.white),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 1, color: Colors.white), //<-- SEE HERE
-                      ),
-                    ),
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor insira um nome';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.only(right: 50, left: 50),
-                  child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    cursorColor: Colors.white,
-                    style: TextStyle(
-                      color: Colors.white,
-                      shadows: <Shadow>[
-                        Shadow(
-                          offset: Offset(1.0, 1.0),
-                          blurRadius: 7.0,
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                    controller: myController0,
-                    decoration: const InputDecoration(
-                      hintText: 'Cpf:',
-                      hintStyle: TextStyle(color: Colors.white),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                            width: 1, color: Colors.white), //<-- SEE HERE
-                      ),
-                    ),
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor insira um cpf';
-                      }
-                      return null;
-                    },
-                  ),
-                ),
-                SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.only(right: 50, left: 50),
                   child: TextFormField(
@@ -250,31 +188,6 @@ class _CadState extends State<Cad> {
                   ),
                 ),
                 SizedBox(height: 15),
-                // Padding(
-                //   padding: const EdgeInsets.only(right: 50, left: 50),
-                //   child: TextFormField(
-                //     cursorColor: Colors.white,
-                //     style: TextStyle(
-                //       color: Colors.white,
-                //       shadows: <Shadow>[
-                //         Shadow(
-                //           offset: Offset(1.0, 1.0),
-                //           blurRadius: 7.0,
-                //           color: Colors.black,
-                //         ),
-                //       ],
-                //     ),
-                //     controller: myController3,
-                //     decoration: const InputDecoration(
-                //       hintText: 'Confirme a senha:',
-                //       hintStyle: TextStyle(color: Colors.white),
-                //       enabledBorder: UnderlineInputBorder(
-                //         borderSide: BorderSide(
-                //             width: 1, color: Colors.white), //<-- SEE HERE
-                //       ),
-                //     ),
-                //   ),
-                // ),
                 SizedBox(height: 15),
                 // Padding(
                 //   padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -331,37 +244,33 @@ class _CadState extends State<Cad> {
                   style: const ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll<Color>(Colors.black38)),
-                  child: const Text('Cadastrar',
+                  child: const Text('Entrar',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                       )),
                   onPressed: () {
-                    // Validate will return true if the form is valid, or false if
-                    // the form is invalid.
-
                     if (_formKey.currentState!.validate()) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Log()),
+                        MaterialPageRoute(builder: (context) => Home_TDAH()),
                       );
                     } else {
-                      print('O Cadastro é invalido');
+                      print('O formulário é invalido');
                     }
                   },
                 ),
-                SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text("Já tem um cadastro?"),
+                    Text("Não tem um cadastro?"),
                     SizedBox(
                       width: 5,
                     ),
                     InkWell(
                       child: const Text(
-                        'Entrar',
+                        'Cadastrar',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 22,
@@ -369,7 +278,10 @@ class _CadState extends State<Cad> {
                         ),
                       ),
                       onTap: () => {
-                        Navigator.pop(context),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Cad()),
+                        )
                       },
                     ),
                   ],
